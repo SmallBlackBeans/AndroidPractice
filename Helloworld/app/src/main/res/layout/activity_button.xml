@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    tools:context="com.example.helloworld.ButtonActivity">
+
+    <Button
+        android:id="@+id/btn_1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#FF9900"
+        android:text="按钮1"
+        android:textColor="#FFF"
+        android:textSize="22sp" />
+
+    <Button
+        android:id="@+id/btn_2"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/btn_1"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bg_yuanjiao"
+        android:text="按钮2"
+        android:textColor="#FFF"
+        android:textSize="22sp" />
+
+    <Button
+        android:id="@+id/btn_3"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/btn_2"
+        android:layout_marginTop="30dp"
+        android:background="#FF0000"
+        android:text="按钮3"
+        android:textColor="#FFF"
+        android:textSize="22sp" />
+
+</RelativeLayout>

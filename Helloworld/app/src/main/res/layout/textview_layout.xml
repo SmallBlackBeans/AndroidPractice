@@ -2,36 +2,34 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:lines="2"
         android:ellipsize="end"
-        android:textSize="22sp"
+        android:lines="2"
         android:text="hdaohfdkadjfklasdjfjkldjfakdfadfadsfadsfadsfadsjfklasdjfaldkfkaldjfakldfhdaohfdkadjfklasdjfjkldjfakdjfklasdjfaldkfkaldjfakldfhdaohfdkadjfklasdjfjkldjfakdjfklasdjfaldkfkaldjfakldf"
-        />
-    
+        android:textSize="22sp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:textSize="22sp"
         android:singleLine="true"
         android:text="hdaohfdkadjfklasdjfjkldjfakdfadfadsfadsfadsfadsjfklasdjfaldkfkaldjfakldfhdaohfdkadjfklasdjfjkldjfakdjfklasdjfaldkfkaldjfakldfhdaohfdkadjfklasdjfjkldjfakdjfklasdjfaldkfkaldjfakldf"
-        />
+        android:textSize="22sp" />
+
     <!--typeface 字体风格-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="22sp"
-        android:typeface="serif"
         android:text="abc123"
-        />
+        android:textSize="22sp"
+        android:typeface="serif" />
 
     <Button
+        android:id="@+id/btn_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Button" />
@@ -45,9 +43,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="22sp"
         android:clickable="true"
         android:onClick="myClick"
         android:text="abc123"
-        />
+        android:textSize="22sp" />
 </LinearLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context="com.example.helloworld.TextViewActivity">
+
+    <TextView
+        android:id="@+id/tv_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_test1"
+        android:textColor="#000"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+    <!--ellipsize 点点点-->
+    <TextView
+        android:id="@+id/tv_2"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/tv_test1"
+        android:textColor="#000"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+
+    <!--文字加图片icon-->
+    <TextView
+        android:id="@+id/tv_3"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="韩小醋"
+        android:drawableRight="@drawable/ic_launcher_foreground"
+        android:drawablePadding="10dp"
+        android:textColor="#000"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"/>
+
+
+
+    <!--中划线-->
+    <TextView
+        android:id="@+id/tv_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="韩小醋飞了"
+        android:textSize="24sp"
+        android:textStyle="italic"
+        android:layout_marginTop="25dp"
+        android:textColor="#000"/>
+
+    <!--下划线-->
+    <TextView
+        android:id="@+id/tv_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="韩小醋飞了"
+        android:textSize="24sp"
+        android:textStyle="italic"
+        android:layout_marginTop="25dp"
+        android:textColor="#000"/>
+
+    <!--下划线 html-->
+    <TextView
+        android:id="@+id/tv_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="24sp"
+        android:layout_marginTop="25dp"
+        android:textColor="#000"/>
+
+
+    <!--跑马灯-->
+    <TextView
+        android:id="@+id/tv_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:text="韩小醋飞起来，呀呀呀呀呀呀呀呀呀呀呀"
+        android:textSize="24sp"
+        android:textColor="#000"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        />
+
+</LinearLayout>

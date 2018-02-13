@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.helloworld.HomeActivity">
+    tools:context="com.example.helloworld.HomeActivity"
+    android:orientation="vertical"
+    >
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,6 +23,36 @@
         android:layout_height="wrap_content"
         android:text="Button"
         tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="93dp" />
+        tools:layout_editor_absoluteY="93dp"
+        tools:ignore="MissingConstraints" />
 
-</android.support.constraint.ConstraintLayout>
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOn="打开的"
+        android:textOff="关闭的"
+        android:text="@string/hello_world"
+        />
+
+    <RadioGroup
+        android:id="@+id/sex_rg"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/sex_man"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="男"
+            />
+        <RadioButton
+            android:id="@+id/sex_woman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="女"
+            />
+    </RadioGroup>
+
+
+</LinearLayout>

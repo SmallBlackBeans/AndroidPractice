@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.helloworld.MainActivity">
-    <!-- 线性布局-->
+    tools:context="com.example.helloworld.MainActivity"
+    android:padding="20dp"
+    android:orientation="vertical"
+    >
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/btn_textview"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="TextView"
+        />
+
+    <Button
+        android:id="@+id/btn_button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Button"
+        />
+
+</LinearLayout>
