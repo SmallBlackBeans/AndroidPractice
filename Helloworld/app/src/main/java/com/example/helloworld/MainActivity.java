@@ -2,72 +2,50 @@ package com.example.helloworld;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RadioGroup;
-import android.widget.Toast;
 
-public class MainActivity extends Activity {
+import com.example.helloworld.GridView.GridViewActivity;
+import com.example.helloworld.ListView.ListViewActivity;
+import com.example.helloworld.RecycleView.RecyclerViewActivity;
+import com.example.helloworld.WebView.WebViewActivity;
+
+public class MainActivity extends AppCompatActivity {
 
 
-    private Button mBtnTextView, mBtnButton;
+    private Button mBtnUI;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        RadioGroup sexGroup = (RadioGroup)findViewById(R.id.sex_rg);
-//        sexGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-//            @Override
-////
-//            public void onCheckedChanged(RadioGroup radioGroup, int chedkId) {
-//                if(chedkId == R.id.sex_man) {
-//                    Toast.makeText(MainActivity.this, "男", 0).show();
-//                } else {
-//                    Toast.makeText(MainActivity.this, "女", 0).show();
-//                }
-//            }
-//        });
+        mBtnUI = findViewById(R.id.btn_ui);
+        setListeners();
+    }
 
-        mBtnTextView = findViewById(R.id.btn_textview);
-        mBtnTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // 跳转到TextView 演示界面
-                Intent intent = new Intent(MainActivity.this, TextViewActivity.class);
-                startActivity(intent);
+    private void setListeners() {
+        OnClick onclick = new OnClick();
+        mBtnUI.setOnClickListener(onclick);
+    }
 
+    private class OnClick implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            Intent intent = null;
+            switch (view.getId()) {
+                case R.id.btn_ui:
+                    intent = new Intent(MainActivity.this, UIActivity.class);
+                    break;
             }
-        });
-
-        mBtnButton = findViewById(R.id.btn_button);
-        mBtnButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ButtonActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
-
-
+            startActivity(intent);
+        }
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    public void  myClick(View v) {
-        Toast.makeText(this,"click", Toast.LENGTH_LONG).show();
-    }
-
 }
+
+
 
 
 

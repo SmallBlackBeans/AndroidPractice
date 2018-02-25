@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.helloworld">
+    //声明网络请求权限
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -16,9 +18,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity" />
         <activity android:name=".TextViewActivity" />
-        <activity android:name=".ButtonActivity"></activity>
+        <activity android:name=".ButtonActivity" />
+        <activity android:name=".EditTextActivity" />
+        <activity android:name=".RadioButtonActivity" />
+        <activity android:name=".CheckBoxActivity" />
+        <activity android:name=".ImageViewActivity" />
+        <activity android:name=".ListView.ListViewActivity" />
+        <activity android:name=".GridView.GridViewActivity" />
+        <activity android:name=".RecycleView.RecyclerViewActivity" />
+        <activity android:name=".RecycleView.LinearRecyclerViewActivity" />
+        <activity android:name=".RecycleView.HorRecyclerViewActivity" />
+        <activity android:name=".RecycleView.GridRecyclerViewActivity" />
+        <activity android:name=".RecycleView.WaterfallRecyclerViewActivity" />
+        <activity android:name=".WebView.WebViewActivity" />
+        <activity android:name=".ToastActivity" />
+        <activity android:name=".UIActivity" />
+        <activity android:name=".DialogActivity" />
+        <activity android:name=".ProgressActivity" />
+        <activity android:name=".CustomDialogActivity"></activity>
     </application>
 
 </manifest>

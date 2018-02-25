@@ -27,15 +27,53 @@
         android:textColor="#FFF"
         android:textSize="22sp" />
 
+
+
     <Button
         android:id="@+id/btn_3"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_below="@id/btn_2"
         android:layout_marginTop="30dp"
-        android:background="#FF0000"
+        android:background="@drawable/bg_miaobian"
         android:text="按钮3"
+        android:textColor="#F00"
+        android:textSize="22sp" />
+
+    <Button
+        android:id="@+id/btn_4"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/btn_3"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bg_state"
+        android:text="按钮4"
         android:textColor="#FFF"
         android:textSize="22sp" />
+
+    <Button
+        android:id="@+id/btn_5"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/btn_4"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bg_state"
+        android:text="按钮5"
+        android:onClick="showToast"
+        android:textColor="#FFF"
+        android:textSize="22sp" />
+
+
+    <TextView
+        android:id="@+id/tv_1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="20sp"
+        android:textColor="#FFF"
+        android:layout_below="@id/btn_5"
+        android:text="TextView"
+        android:layout_marginTop="30dp"
+        android:background="#FF9900"
+        android:gravity="center"/>
 
 </RelativeLayout>
