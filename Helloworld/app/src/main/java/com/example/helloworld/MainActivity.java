@@ -17,18 +17,22 @@ public class MainActivity extends AppCompatActivity {
 
     private Button mBtnUI;
 
+    private Button mBtnLifeCycle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mBtnUI = findViewById(R.id.btn_ui);
+        mBtnLifeCycle = findViewById(R.id.btn_lifecycle);
         setListeners();
     }
 
     private void setListeners() {
         OnClick onclick = new OnClick();
         mBtnUI.setOnClickListener(onclick);
+        mBtnLifeCycle.setOnClickListener(onclick);
     }
 
     private class OnClick implements View.OnClickListener {
@@ -38,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
             switch (view.getId()) {
                 case R.id.btn_ui:
                     intent = new Intent(MainActivity.this, UIActivity.class);
+                    break;
+
+                case R.id.btn_lifecycle:
+                    intent = new Intent(MainActivity.this, LifeCycleActivity.class);
                     break;
             }
             startActivity(intent);
