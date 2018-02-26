@@ -1,7 +1,7 @@
 package com.example.helloworld;
 
 import android.content.Intent;
-import android.net.Uri;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,11 +13,16 @@ import com.example.helloworld.ListView.ListViewActivity;
 import com.example.helloworld.RecycleView.RecyclerViewActivity;
 import com.example.helloworld.WebView.WebViewActivity;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class UIActivity extends AppCompatActivity {
 
 
     private Button mBtnTextView, mBtnButton, mBtnEditText, mRadioBtn, mcheckBox, mImageView, mListView;
 
+    @BindView(R.id.btn_datetime)
+    Button mBtnDatetime;
 
     private Button mBtnGridView;
 
@@ -38,10 +43,14 @@ public class UIActivity extends AppCompatActivity {
     private Button mBtnFragment;
 
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ui);
+        ButterKnife.bind(this);
         mBtnTextView = findViewById(R.id.btn_textview);
         mBtnButton = findViewById(R.id.btn_button);
         mBtnEditText = findViewById(R.id.edittext);
@@ -79,6 +88,7 @@ public class UIActivity extends AppCompatActivity {
         mBtnCustomDialog.setOnClickListener(onclick);
         mBtnPopUpWindow.setOnClickListener(onclick);
         mBtnFragment.setOnClickListener(onclick);
+        mBtnDatetime.setOnClickListener(onclick);
     }
 
     private class OnClick implements View.OnClickListener {
@@ -148,6 +158,10 @@ public class UIActivity extends AppCompatActivity {
 
                 case R.id.btn_fragment:
                     intent = new Intent(UIActivity.this, ContainerActivity.class);
+                    break;
+
+                case R.id.btn_datetime:
+                    intent = new Intent(UIActivity.this, DatePickerActivity.class);
                     break;
             }
             startActivity(intent);
