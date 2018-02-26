@@ -25,6 +25,27 @@
             android:text="LifeCycle"
             android:textAllCaps="false"/>
 
+        <Button
+            android:id="@+id/btn_event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="事件机制"
+            android:textAllCaps="false"/>
+
+
+        <Button
+            android:id="@+id/btn_handler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Handler消息处理"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/btn_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="数据存储"
+            android:textAllCaps="false"/>
 
     </LinearLayout>
 

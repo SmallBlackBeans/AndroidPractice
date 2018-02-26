@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.helloworld.Fragment.ContainerActivity;
 import com.example.helloworld.GridView.GridViewActivity;
 import com.example.helloworld.ListView.ListViewActivity;
 import com.example.helloworld.RecycleView.RecyclerViewActivity;
@@ -34,6 +35,8 @@ public class UIActivity extends AppCompatActivity {
 
     private Button mBtnPopUpWindow;
 
+    private Button mBtnFragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +57,7 @@ public class UIActivity extends AppCompatActivity {
         mBtnProgress = findViewById(R.id.btn_progress);
         mBtnCustomDialog = findViewById(R.id.btn_custom_dialog);
         mBtnPopUpWindow = findViewById(R.id.btn_popUpWindow);
+        mBtnFragment = findViewById(R.id.btn_fragment);
         setListeners();
     }
 
@@ -74,6 +78,7 @@ public class UIActivity extends AppCompatActivity {
         mBtnProgress.setOnClickListener(onclick);
         mBtnCustomDialog.setOnClickListener(onclick);
         mBtnPopUpWindow.setOnClickListener(onclick);
+        mBtnFragment.setOnClickListener(onclick);
     }
 
     private class OnClick implements View.OnClickListener {
@@ -139,6 +144,10 @@ public class UIActivity extends AppCompatActivity {
 
                 case R.id.btn_popUpWindow:
                     intent = new Intent(UIActivity.this, PopupWindowActivity.class);
+                    break;
+
+                case R.id.btn_fragment:
+                    intent = new Intent(UIActivity.this, ContainerActivity.class);
                     break;
             }
             startActivity(intent);
