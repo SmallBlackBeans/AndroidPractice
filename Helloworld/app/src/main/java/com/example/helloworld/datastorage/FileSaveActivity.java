@@ -11,10 +11,13 @@ import android.widget.TextView;
 
 import com.example.helloworld.R;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 
 
 /**
@@ -62,13 +65,19 @@ public class FileSaveActivity extends AppCompatActivity {
     private void save(String content) {
         FileOutputStream fileOutputStream = null;
         try {
-            //内部存储
+            //1内部存储
             {
                 // fileOutputStream = openFileOutput(mFileName, MODE_PRIVATE);
             }
 
-            //外部存储
+            //2外部存储
             {
+
+                String storageState = Environment.getExternalStorageState();
+                if (storageState.equals(Environment.MEDIA_MOUNTED)) {//安装了SD卡
+
+                }
+
                 File dir = new File(Environment.getExternalStorageDirectory(), "hanxiaocu");
                 if (!dir.exists()) {
                     dir.mkdirs();
@@ -81,8 +90,21 @@ public class FileSaveActivity extends AppCompatActivity {
                 fileOutputStream = new FileOutputStream(file);
             }
 
-
             fileOutputStream.write(content.getBytes());
+
+
+            {//3
+                File dir = new File(Environment.getExternalStorageDirectory(), "hanxiaocu");
+                if (!dir.exists()) {
+                    dir.mkdirs();
+                }
+
+                File file = new File(dir, mFileName);
+                BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+                //BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file)));
+                writer.write(content);
+                writer.close();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -110,8 +132,6 @@ public class FileSaveActivity extends AppCompatActivity {
                 File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "hanxiaocu", mFileName);
                 fileInputStream = new FileInputStream(file);
             }
-
-
 
             byte[] buff = new byte[1024];
             StringBuffer sb = new StringBuffer("");
