@@ -38,14 +38,17 @@ public class ContactDAO {
     }
 
 
-    public void queryContact(String phone) {
+    public String queryContact(String phone) {
         SQLiteDatabase db = mHelper.getWritableDatabase();
-        Cursor cursor = db.rawQuery("select username from contactinfo where phone = ?", new String[]{phone});
+        Cursor cursor = db.rawQuery("select username from contactinfo where phone=?", new String[]{phone});
         boolean b = cursor.moveToNext();
+        String user = "";
         while (b) {
-            String user = cursor.getString(0);
+            user = cursor.getString(0);
             Log.d(TAG, "queryContact: " + user);
+            b = cursor.moveToNext();
         }
+        return user;
     }
 
 }

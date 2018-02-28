@@ -13,6 +13,7 @@ import com.example.helloworld.Event_Listener.EventListenerActivity;
 import com.example.helloworld.Handler.HandlerActivity;
 import com.example.helloworld.Parse.XmlParseActivity;
 import com.example.helloworld.datastorage.DataStorageActivity;
+import com.idescout.sql.SqlScoutServer;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SqlScoutServer.create(this, getPackageName());
         ButterKnife.bind(this);
         //动态获取存储权限
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
