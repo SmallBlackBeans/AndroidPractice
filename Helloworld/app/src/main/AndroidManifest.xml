@@ -55,7 +55,8 @@
         <activity android:name=".datastorage.SharedPreferencesActivity" />
         <activity android:name=".datastorage.FileSaveActivity" />
         <activity android:name=".DatePickerActivity" />
-        <activity android:name=".Parse.XmlParseActivity"></activity>
+        <activity android:name=".Parse.XmlParseActivity" />
+        <activity android:name=".SQLite.SqlLiteActivity"></activity>
     </application>
 
 </manifest>
