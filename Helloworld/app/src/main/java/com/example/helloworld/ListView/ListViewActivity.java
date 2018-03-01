@@ -6,10 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.helloworld.R;
+
+import java.util.ArrayList;
 
 public class ListViewActivity extends Activity {
 
@@ -20,6 +23,8 @@ public class ListViewActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view);
         mlv1 = findViewById(R.id.lv_1);
+
+        //1
         mlv1.setAdapter(new MyListAdapter(ListViewActivity.this));
         mlv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -36,5 +41,18 @@ public class ListViewActivity extends Activity {
                 return false;
             }
         });
+
+        //2
+        ArrayList<String> arrayList = new ArrayList<>();
+        for (int i = 0; i < 30; i++) {
+            arrayList.add("niaho" + i);
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, arrayList);
+        mlv1.setAdapter(adapter);
+
+
+        //3
+
     }
 }

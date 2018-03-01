@@ -50,7 +50,7 @@ public class MyListAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder holder = null;
         if (view == null) {
-            view = mLayoutInflater.inflate(R.layout.layout_list_item, null);
+            view = mLayoutInflater.from(viewGroup.getContext()).inflate(R.layout.layout_list_item, null);
             holder = new ViewHolder();
             holder.imageView = view.findViewById(R.id.iv);
             holder.tvTitle = view.findViewById(R.id.tv_title);

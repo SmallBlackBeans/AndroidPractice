@@ -51,10 +51,28 @@ public class SqlLiteActivity extends AppCompatActivity {
         mDAO = new ContactDAO(this);
     }
 
+//    @OnClick({R.id.btn_add, R.id.btn_update, R.id.btn_delete, R.id.btn_select})
+//    public void onViewClicked(View view) {
+//    switch (view.getId()) {
+//    case R.id.btn_add:
+//    mDAO.insertContact("hanxiaocu", "1234552324");
+//    break;
+//    case R.id.btn_update:
+//    mDAO.updateContact("hanxiaocu", "1111111");
+//    break;
+//    case R.id.btn_delete:
+//    mDAO.deleteContact("hanxiaocu");
+//    break;
+//    case R.id.btn_select:
+//    mTvUsername.setText(mDAO.queryContact("1111111"));
+//    break;
+//    }
+//    }
+
+
     @OnClick({R.id.btn_add, R.id.btn_update, R.id.btn_delete, R.id.btn_select})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-
             case R.id.btn_add:
                 mDAO.insertContact("hanxiaocu", "1234552324");
                 break;

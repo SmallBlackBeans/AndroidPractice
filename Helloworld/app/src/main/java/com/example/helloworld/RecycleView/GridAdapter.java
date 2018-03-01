@@ -26,6 +26,8 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.LinearViewHold
     public GridAdapter(Context context, OnItemClickListener listener) {
         this.mContext = context;
         this.mListener = listener;
+
+
     }
 
     @Override
