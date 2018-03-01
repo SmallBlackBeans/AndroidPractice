@@ -1,1 +1,1 @@
-include ':app', ':图片控件'
+include ':app'
