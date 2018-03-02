@@ -1,23 +1,27 @@
 package com.example.helloworld;
 
 import android.content.Intent;
-
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.helloworld.Fragment.ContainerActivity;
 import com.example.helloworld.GridView.GridViewActivity;
+import com.example.helloworld.ListView.ExpandableListViewActivity;
 import com.example.helloworld.ListView.ListViewActivity;
 import com.example.helloworld.RecycleView.RecyclerViewActivity;
 import com.example.helloworld.WebView.WebViewActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class UIActivity extends AppCompatActivity {
 
+
+    @BindView(R.id.btn_expLv)
+    Button mBtnExpLv;
 
     private Button mBtnTextView, mBtnButton, mBtnEditText, mRadioBtn, mcheckBox, mImageView, mListView;
 
@@ -41,9 +45,6 @@ public class UIActivity extends AppCompatActivity {
     private Button mBtnPopUpWindow;
 
     private Button mBtnFragment;
-
-
-
 
 
     @Override
@@ -89,6 +90,12 @@ public class UIActivity extends AppCompatActivity {
         mBtnPopUpWindow.setOnClickListener(onclick);
         mBtnFragment.setOnClickListener(onclick);
         mBtnDatetime.setOnClickListener(onclick);
+    }
+
+    @butterknife.OnClick(R.id.btn_expLv)
+    public void onViewClicked() {
+        Intent intent = new Intent(this, ExpandableListViewActivity.class);
+        startActivity(intent);
     }
 
     private class OnClick implements View.OnClickListener {

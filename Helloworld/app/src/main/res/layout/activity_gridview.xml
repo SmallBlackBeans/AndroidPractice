@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:horizontalSpacing="10dp"
         android:numColumns="3"
+        android:listSelector="#0000"
         android:verticalSpacing="10dp"></GridView>
 
 </LinearLayout>

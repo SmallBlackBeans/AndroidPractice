@@ -60,7 +60,7 @@ public class MyGridAdapter extends BaseAdapter {
             holder = (ViewHolder) view.getTag();
         }
         holder.mTextView.setText("花朵");
-        Glide.with(mContext).load("https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3878847766,3988120331&fm=200&gp=0.jpg").into(holder.mImageView);
+        //Glide.with(mContext).load("https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3878847766,3988120331&fm=200&gp=0.jpg").into(holder.mImageView);
         return view;
     }
 }

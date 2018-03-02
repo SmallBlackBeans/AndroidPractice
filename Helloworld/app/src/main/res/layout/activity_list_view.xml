@@ -8,11 +8,16 @@
     android:orientation="vertical">
 
 
+    <!--dividerHeight 分割线-->
 <ListView
     android:id="@+id/lv_1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:dividerHeight="0.5dp"
+    android:cacheColorHint="#0fff"
+    android:scrollingCache="false"
+    android:background="@drawable/ic_launcher_foreground"
+    android:fadingEdge="none"
     android:listSelector="@drawable/list_item"
 
     >

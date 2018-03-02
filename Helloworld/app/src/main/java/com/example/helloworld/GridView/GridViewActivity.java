@@ -24,7 +24,7 @@ public class GridViewActivity extends Activity {
 
         mGridView = findViewById(R.id.gv);
 
-        mGridView.setAdapter(new MyGridAdapter(GridViewActivity.this));
+        mGridView.setAdapter(new MyGridAdapter(this));
 
     }
 }
