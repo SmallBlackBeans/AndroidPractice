@@ -11,12 +11,16 @@ import android.widget.Button;
 
 import com.example.helloworld.Event_Listener.EventListenerActivity;
 import com.example.helloworld.Handler.HandlerActivity;
+import com.example.helloworld.Network.ImageLookerActivity;
+import com.example.helloworld.Network.NetWorkActivity;
 import com.example.helloworld.Parse.XmlParseActivity;
 import com.example.helloworld.datastorage.DataStorageActivity;
-//import com.idescout.sql.SqlScoutServer;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+//import com.idescout.sql.SqlScoutServer;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,26 +34,22 @@ public class MainActivity extends AppCompatActivity {
     Button mBtnHandler;
     @BindView(R.id.btn_data)
     Button mBtnData;
-    @BindView(R.id.btn_parse)
-    Button mBtnParse;
+    @BindView(R.id.btn_network)
+    Button mBtnNetWork;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        SqlScoutServer.create(this, getPackageName());
+        //SqlScoutServer.create(this, getPackageName());
         ButterKnife.bind(this);
         //动态获取存储权限
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
     }
 
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-    }
-
-    @butterknife.OnClick({R.id.btn_ui, R.id.btn_lifecycle, R.id.btn_event, R.id.btn_handler, R.id.btn_data, R.id.btn_parse})
+    @OnClick({R.id.btn_ui, R.id.btn_lifecycle, R.id.btn_event, R.id.btn_handler, R.id.btn_data, R.id.btn_network})
     public void onViewClicked(View view) {
         Intent intent = null;
         switch (view.getId()) {
@@ -68,12 +68,19 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_data:
                 intent = new Intent(MainActivity.this, DataStorageActivity.class);
                 break;
-            case R.id.btn_parse:
-                intent = new Intent(MainActivity.this, XmlParseActivity.class);
+            case R.id.btn_network:
+                intent = new Intent(MainActivity.this, NetWorkActivity.class);
                 break;
         }
         startActivity(intent);
     }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
 }
 
 

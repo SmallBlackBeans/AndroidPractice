@@ -58,7 +58,9 @@
         <activity android:name=".Parse.XmlParseActivity" />
         <activity android:name=".SQLite.SqlLiteActivity" />
         <activity android:name=".ListView.ExpandableListViewActivity" />
-        <activity android:name=".Network.ImageLookerActivity"></activity>
+        <activity android:name=".Network.ImageLookerActivity" />
+        <activity android:name=".Network.NewsListActivity" />
+        <activity android:name=".Network.NetWorkActivity"></activity>
     </application>
 
 </manifest>
