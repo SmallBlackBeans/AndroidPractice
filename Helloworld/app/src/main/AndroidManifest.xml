@@ -60,7 +60,9 @@
         <activity android:name=".ListView.ExpandableListViewActivity" />
         <activity android:name=".Network.ImageLookerActivity" />
         <activity android:name=".Network.NewsListActivity" />
-        <activity android:name=".Network.NetWorkActivity"></activity>
+        <activity android:name=".Network.NetWorkActivity" />
+        <activity android:name=".Network.AsycHttpClientActivity" />
+        <activity android:name=".Network.MutilThreadDownLoadActivity"></activity>
     </application>
 
 </manifest>

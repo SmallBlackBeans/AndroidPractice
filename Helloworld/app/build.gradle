@@ -41,8 +41,6 @@ configurations.all {
     }
 }
 
-
-
 //apply plugin: 'com.didi.virtualapk.plugin'
 
 dependencies {
@@ -75,5 +73,9 @@ dependencies {
     debugCompile 'com.amitshekhar.android:debug-db:1.0.0'
 
 //    compile 'com.didi.virtualapk:core:0.9.1'
+
+
+    compile 'com.loopj.android:android-async-http:1.4.9'
+    compile 'org.xutils:xutils:3.5.0'
 
 }
