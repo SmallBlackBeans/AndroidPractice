@@ -2,6 +2,7 @@ package com.example.helloworld;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -11,10 +12,9 @@ import android.widget.Button;
 
 import com.example.helloworld.Event_Listener.EventListenerActivity;
 import com.example.helloworld.Handler.HandlerActivity;
-import com.example.helloworld.Network.ImageLookerActivity;
 import com.example.helloworld.Network.NetWorkActivity;
-import com.example.helloworld.Parse.XmlParseActivity;
 import com.example.helloworld.datastorage.DataStorageActivity;
+import com.example.helloworld.BroadCast.ScreenLockReceiver;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     Button mBtnData;
     @BindView(R.id.btn_network)
     Button mBtnNetWork;
+    private ScreenLockReceiver mReceiver;
 
 
     @Override
@@ -46,8 +47,34 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         //动态获取存储权限
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+
+
+
+
+        /*
+            <receiver android:name=".广播.ScreenLockReceiver">
+                <intent-filter>
+                    <!--屏幕锁屏与解锁-->
+                    <action android:name="android.intent.action.SCREEN_OFF"/>
+                    <action android:name="android.intent.action.SCREEN_ON"/>
+                </intent-filter>
+            </receiver>
+        */
+        //锁屏和解锁是一个耗时操作，所以监听最好放在这里
+         mReceiver = new ScreenLockReceiver();
+        IntentFilter filter =  new IntentFilter();
+        filter.addAction(Intent.ACTION_SCREEN_ON);
+        filter.addAction(Intent.ACTION_SCREEN_OFF);
+        registerReceiver(mReceiver,filter);
+
     }
 
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(mReceiver);
+    }
 
     @OnClick({R.id.btn_ui, R.id.btn_lifecycle, R.id.btn_event, R.id.btn_handler, R.id.btn_data, R.id.btn_network})
     public void onViewClicked(View view) {
