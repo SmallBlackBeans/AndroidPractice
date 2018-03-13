@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="20dp"
+    tools:context="com.example.helloworld.Notice.SMSNoticeActivity">
+
+    <Button
+        android:id="@+id/btn_showTip2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showNotificationlow"
+        android:text="显示提示框2.0版本" />
+
+    <Button
+        android:id="@+id/btn_showTip4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:onClick="showNotificationhigh"
+        android:text="显示提示框4.0以上版本" />
+
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:onClick="cancelNotification"
+        android:text="取消弹出框" />
+</LinearLayout>

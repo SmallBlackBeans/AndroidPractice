@@ -2,7 +2,25 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.helloworld">
 
+    <!-- 声明网络请求权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- 存储读写权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <!-- 电话外拨 -->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <!-- 接收短信 -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- 录音功能 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- 开机 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -11,6 +29,66 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!-- 所有的广播 -->
+        <receiver android:name=".BroadCast.PhoneReceiver">
+            <intent-filter>
+
+                <!-- 监听手机打出去 -->
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".BroadCast.SDCardReceiver">
+            <intent-filter>
+
+                <!-- SD 卡安装/卸载事件 -->
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <action android:name="android.intent.action.MEDIA_UNMOUNTED" />
+                <!-- 其实就是一个大文件的操作 -->
+                <data android:scheme="file" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".BroadCast.SmsReceiver">
+            <intent-filter android:priority="1000">
+
+                <!-- 接受短信 -->
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".BroadCast.ApkStatusReceiver">
+            <intent-filter>
+
+                <!-- 应用安装 -->
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <!-- 卸载 -->
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".BroadCast.BootReceiver">
+            <intent-filter>
+
+                <!-- 开机监听 -->
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 所有的服务 -->
+        <service android:name=".Service.MyService" />
+        <service android:name=".Service.CallService" />
+        <service android:name=".Service.BootService" />
+
+        <!-- 模拟远程调用 -->
+        <service android:name=".RemoteService.AlipayService">
+            <intent-filter>
+                <action android:name="com.example.helloworld.action.ALiPAY" />
+            </intent-filter>
+        </service>
+
+        <!-- 音乐播放服务 -->
+        <service android:name=".Music.MusicService" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -55,80 +133,16 @@
         <activity android:name=".Network.NewsListActivity" />
         <activity android:name=".Network.NetWorkActivity" />
         <activity android:name=".Network.AsycHttpClientActivity" />
-        <activity android:name=".Network.MutilThreadDownLoadActivity"></activity>
-
-        <!--所有的广播-->
-        <receiver android:name=".BroadCast.PhoneReceiver">
-            <intent-filter >
-                <!--监听手机打出去-->
-                <action android:name="android.intent.action.NEW_OUTGOING_CALL"></action>
-            </intent-filter>
-        </receiver>
-
-        <receiver android:name=".BroadCast.SDCardReceiver">
-            <intent-filter>
-                <!--SD 卡安装/卸载事件-->
-                <action android:name="android.intent.action.MEDIA_MOUNTED"></action>
-                <action android:name="android.intent.action.MEDIA_UNMOUNTED"></action>
-                <!--其实就是一个大文件的操作-->
-                <data android:scheme="file"></data>
-            </intent-filter>
-        </receiver>
-
-        <receiver android:name=".BroadCast.SmsReceiver">
-            <intent-filter android:priority="1000">
-                <!--接受短信-->
-                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
-            </intent-filter>
-        </receiver>
-
-        <receiver android:name=".BroadCast.ApkStatusReceiver">
-            <intent-filter>
-                <!--应用安装-->
-                <action android:name="android.intent.action.PACKAGE_ADDED"/>
-                <!--卸载-->
-                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
-                <data android:scheme="package"/>
-            </intent-filter>
-        </receiver>
-
-
-
-        <receiver android:name=".BroadCast.BootReceiver">
-            <intent-filter>
-                <!--开机监听-->
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
-            </intent-filter>
-        </receiver>
-
-
-
-        
-        
-
-        
-        <!--所有的服务-->
-        <service android:name=".Service.MyService"/>
-        <service android:name=".Service.CallService"/>
-        <service android:name=".Service.BootService"/>
-        
-        
+        <activity android:name=".Network.MutilThreadDownLoadActivity" />
+        <activity android:name=".RemoteService.TaobaoActivity" />
+        <activity android:name=".Music.MusicListActivity" />
+        <activity android:name=".Notice.SMSNoticeActivity" />
+        <activity android:name=".ImageLoad.BigImageLoadActivity" />
+        <activity android:name=".ImageLoad.ImageListActivity" />
+        <activity android:name=".ImageLoad.ImageScaleActivity" />
+        <activity android:name=".ImageLoad.ImageRotateActivity" />
+        <activity android:name=".ImageLoad.ImageTranslateActivity" />
+        <activity android:name=".ImageLoad.ImageReflectionActivity"></activity>
     </application>
-    <!--声明网络请求权限-->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!--存储权限-->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-    <!--电话外拨-->
-    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
-    <!--接收短信-->
-    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    
 
-    <!--录音功能-->
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-
-    <!--开机-->
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 </manifest>

@@ -10,11 +10,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.helloworld.BroadCast.ScreenLockReceiver;
 import com.example.helloworld.Event_Listener.EventListenerActivity;
 import com.example.helloworld.Handler.HandlerActivity;
+import com.example.helloworld.ImageLoad.ImageListActivity;
+import com.example.helloworld.Music.MusicListActivity;
 import com.example.helloworld.Network.NetWorkActivity;
+import com.example.helloworld.Notice.SMSNoticeActivity;
 import com.example.helloworld.datastorage.DataStorageActivity;
-import com.example.helloworld.BroadCast.ScreenLockReceiver;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -36,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
     Button mBtnData;
     @BindView(R.id.btn_network)
     Button mBtnNetWork;
+    @BindView(R.id.btn_music)
+    Button mBtnMusic;
+    @BindView(R.id.btn_notify)
+    Button mBtnNotify;
+    @BindView(R.id.btn_image)
+    Button mBtnImage;
     private ScreenLockReceiver mReceiver;
 
 
@@ -45,10 +54,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //SqlScoutServer.create(this, getPackageName());
         ButterKnife.bind(this);
+
         //动态获取存储权限
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
-
-
+        //动态获取读取权限
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
 
 
         /*
@@ -61,11 +71,11 @@ public class MainActivity extends AppCompatActivity {
             </receiver>
         */
         //锁屏和解锁是一个耗时操作，所以监听最好放在这里
-         mReceiver = new ScreenLockReceiver();
-        IntentFilter filter =  new IntentFilter();
+        mReceiver = new ScreenLockReceiver();
+        IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_SCREEN_ON);
         filter.addAction(Intent.ACTION_SCREEN_OFF);
-        registerReceiver(mReceiver,filter);
+        registerReceiver(mReceiver, filter);
 
     }
 
@@ -76,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         unregisterReceiver(mReceiver);
     }
 
-    @OnClick({R.id.btn_ui, R.id.btn_lifecycle, R.id.btn_event, R.id.btn_handler, R.id.btn_data, R.id.btn_network})
+    @OnClick({R.id.btn_ui, R.id.btn_lifecycle, R.id.btn_event, R.id.btn_handler, R.id.btn_data, R.id.btn_network, R.id.btn_music, R.id.btn_notify, R.id.btn_image})
     public void onViewClicked(View view) {
         Intent intent = null;
         switch (view.getId()) {
@@ -98,6 +108,17 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_network:
                 intent = new Intent(MainActivity.this, NetWorkActivity.class);
                 break;
+            case R.id.btn_music:
+                intent = new Intent(this, MusicListActivity.class);
+                break;
+            case R.id.btn_notify:
+                intent = new Intent(this, SMSNoticeActivity.class);
+                break;
+
+            case R.id.btn_image:
+                intent = new Intent(this, ImageListActivity.class);
+                break;
+
         }
         startActivity(intent);
     }

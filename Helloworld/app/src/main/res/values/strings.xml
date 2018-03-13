@@ -2,4 +2,5 @@
     <string name="app_name">韩小醋</string>
     <string name="hello_world">hello_world</string>
     <string name="tv_test1">奔跑吧，猪，🐷</string>
+    <string name="action_settings">菜单</string>
 </resources>
