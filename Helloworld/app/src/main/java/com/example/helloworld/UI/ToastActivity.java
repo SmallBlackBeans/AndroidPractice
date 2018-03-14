@@ -1,6 +1,5 @@
-package com.example.helloworld;
+package com.example.helloworld.UI;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -11,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.helloworld.R;
 import com.example.helloworld.utils.ToastUtil;
 
 public class ToastActivity extends AppCompatActivity {

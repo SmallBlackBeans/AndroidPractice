@@ -1,4 +1,4 @@
-package com.example.helloworld;
+package com.example.helloworld.UI;
 
 import android.annotation.SuppressLint;
 import android.support.annotation.IdRes;
@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import com.example.helloworld.R;
 
 public class RadioButtonActivity extends AppCompatActivity {
 

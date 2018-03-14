@@ -11,11 +11,22 @@ import com.example.helloworld.GridView.GridViewActivity;
 import com.example.helloworld.ListView.ExpandableListViewActivity;
 import com.example.helloworld.ListView.ListViewActivity;
 import com.example.helloworld.RecycleView.RecyclerViewActivity;
+import com.example.helloworld.UI.ButtonActivity;
+import com.example.helloworld.UI.CheckBoxActivity;
+import com.example.helloworld.UI.CustomDialogActivity;
+import com.example.helloworld.UI.DatePickerActivity;
+import com.example.helloworld.UI.DialogActivity;
+import com.example.helloworld.UI.EditTextActivity;
+import com.example.helloworld.UI.ImageViewActivity;
+import com.example.helloworld.UI.PopupWindowActivity;
+import com.example.helloworld.UI.ProgressActivity;
+import com.example.helloworld.UI.RadioButtonActivity;
+import com.example.helloworld.UI.TextViewActivity;
+import com.example.helloworld.UI.ToastActivity;
 import com.example.helloworld.WebView.WebViewActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class UIActivity extends AppCompatActivity {
 

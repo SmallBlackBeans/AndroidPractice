@@ -1,8 +1,10 @@
-package com.example.helloworld;
+package com.example.helloworld.UI;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+
+import com.example.helloworld.R;
 
 public class LifeCycleActivity extends AppCompatActivity {
 

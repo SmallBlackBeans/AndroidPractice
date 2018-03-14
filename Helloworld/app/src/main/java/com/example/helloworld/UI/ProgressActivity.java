@@ -1,4 +1,4 @@
-package com.example.helloworld;
+package com.example.helloworld.UI;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
+import com.example.helloworld.R;
 import com.example.helloworld.utils.ToastUtil;
 
 public class ProgressActivity extends AppCompatActivity {

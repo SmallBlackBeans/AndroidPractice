@@ -1,4 +1,4 @@
-package com.example.helloworld;
+package com.example.helloworld.UI;
 
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.helloworld.R;
 import com.example.helloworld.utils.ToastUtil;
 
 public class DialogActivity extends AppCompatActivity {

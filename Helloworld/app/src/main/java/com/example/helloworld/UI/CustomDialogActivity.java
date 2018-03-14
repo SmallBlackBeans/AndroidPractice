@@ -1,11 +1,11 @@
-package com.example.helloworld;
+package com.example.helloworld.UI;
 
-import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.helloworld.R;
 import com.example.helloworld.widget.CustomDialog;
 
 public class CustomDialogActivity extends AppCompatActivity {

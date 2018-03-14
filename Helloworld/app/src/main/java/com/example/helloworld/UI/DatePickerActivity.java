@@ -1,9 +1,11 @@
-package com.example.helloworld;
+package com.example.helloworld.UI;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
+
+import com.example.helloworld.R;
 
 import java.sql.Time;
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="15dp"
-    tools:context="com.example.helloworld.EditTextActivity">
+    tools:context="com.example.helloworld.UI.EditTextActivity">
 
     <EditText
         android:id="@+id/ed_username"

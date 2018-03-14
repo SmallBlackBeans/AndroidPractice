@@ -82,6 +82,13 @@
             android:layout_height="wrap_content"
             android:text="百度地图"
             android:textAllCaps="false"/>
+        <Button
+            android:id="@+id/btn_aysnTask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="后台网络请求"
+            android:textAllCaps="false"/>
+
 
     </LinearLayout>
 

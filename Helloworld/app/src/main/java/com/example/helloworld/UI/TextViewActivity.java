@@ -1,10 +1,12 @@
-package com.example.helloworld;
+package com.example.helloworld.UI;
 
 import android.graphics.Paint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.widget.TextView;
+
+import com.example.helloworld.R;
 
 import org.w3c.dom.Text;
 
