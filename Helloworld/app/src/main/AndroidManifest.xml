@@ -14,6 +14,8 @@
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
     <!-- 接收短信 -->
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
+    <!-- 获取手机状态 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <!-- 录音功能 -->
@@ -33,9 +35,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
-
     <application
-        android:name=".BaiduMap.BaiduApplcaition"
+        android:name=".Application.DemoApplcaition"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -103,11 +104,10 @@
                 <action android:name="com.example.helloworld.action.ALiPAY" />
             </intent-filter>
         </service>
-
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
-            android:process=":remote"></service>
+            android:process=":remote" />
 
         <!-- 音乐播放服务 -->
         <service android:name=".Music.MusicService" />
@@ -165,7 +165,17 @@
         <activity android:name=".ImageLoad.ImageScaleActivity" />
         <activity android:name=".ImageLoad.ImageRotateActivity" />
         <activity android:name=".ImageLoad.ImageTranslateActivity" />
-        <activity android:name=".ImageLoad.ImageReflectionActivity"></activity>
+        <activity android:name=".ImageLoad.ImageReflectionActivity" />
+        <activity android:name=".MemoryLeak.ReferenceActivity" />
+        <activity android:name=".MemoryLeak.HandlerLeakActivity" />
+        <activity android:name=".MemoryLeak.InnerClassStaticInstanceActivity" />
+        <activity android:name=".MemoryLeak.ContextLeakActivity" />
+        <activity android:name=".ScreenAdapter.PercentActivity" />
+        <activity android:name=".BaiduMap.LocationActivity" />
+        <activity android:name=".BaiduMap.MarkerActivity" />
+        <activity android:name=".BaiduMap.BaiduMapListActivity" />
+        <activity android:name=".Optimize.ImageOptimizeActivity" />
+        <activity android:name=".AsynTask.AsynTaskActivity"></activity>
     </application>
 
 </manifest>

@@ -1,1 +1,1 @@
-include ':app', ':animators', ':baiduMapSample'
+include ':app', ':animators'

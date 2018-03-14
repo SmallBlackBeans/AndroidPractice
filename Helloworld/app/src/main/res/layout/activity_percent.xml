@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:hxc="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.helloworld.ScreenAdapter.PercentActivity">
+
+
+    <TextView
+        android:id="@+id/tv_1"
+        android:text="haha"
+        hxc:layout_widthPercent="30%"
+        hxc:layout_heightPercent="50%"
+        android:background="#ff0"
+        />
+
+    <TextView
+        android:id="@+id/tv_2"
+        android:text="heng"
+        hxc:layout_widthPercent="70%"
+        hxc:layout_heightPercent="50%"
+        android:layout_toRightOf="@+id/tv_1"
+        android:background="#f00"
+        />
+
+</android.support.percent.PercentRelativeLayout>

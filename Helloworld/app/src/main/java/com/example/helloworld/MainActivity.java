@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.helloworld.BaiduMap.BaiduMapListActivity;
 import com.example.helloworld.BroadCast.ScreenLockReceiver;
 import com.example.helloworld.Event_Listener.EventListenerActivity;
 import com.example.helloworld.Handler.HandlerActivity;
@@ -45,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
     Button mBtnNotify;
     @BindView(R.id.btn_image)
     Button mBtnImage;
+    @BindView(R.id.btn_baidumap)
+    Button mBtnBaidumap;
     private ScreenLockReceiver mReceiver;
 
 
@@ -86,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         unregisterReceiver(mReceiver);
     }
 
-    @OnClick({R.id.btn_ui, R.id.btn_lifecycle, R.id.btn_event, R.id.btn_handler, R.id.btn_data, R.id.btn_network, R.id.btn_music, R.id.btn_notify, R.id.btn_image})
+    @OnClick({R.id.btn_ui, R.id.btn_lifecycle, R.id.btn_event, R.id.btn_handler, R.id.btn_data, R.id.btn_network, R.id.btn_music, R.id.btn_notify, R.id.btn_image, R.id.btn_baidumap})
     public void onViewClicked(View view) {
         Intent intent = null;
         switch (view.getId()) {
@@ -117,6 +120,10 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.btn_image:
                 intent = new Intent(this, ImageListActivity.class);
+                break;
+
+            case R.id.btn_baidumap:
+                intent = new Intent(this, BaiduMapListActivity.class);
                 break;
 
         }
