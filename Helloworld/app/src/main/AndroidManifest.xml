@@ -22,13 +22,31 @@
     <!-- 开机 -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
+    <!-- 添加百度地图的所需权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+
     <application
+        android:name=".BaiduMap.BaiduApplcaition"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!-- 添加百度地图的app的key -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="oTOlcTcHzGfGwdXOuIlNoQKSYqTFmIDu" />
 
         <!-- 所有的广播 -->
         <receiver android:name=".BroadCast.PhoneReceiver">
@@ -85,6 +103,11 @@
                 <action android:name="com.example.helloworld.action.ALiPAY" />
             </intent-filter>
         </service>
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote"></service>
 
         <!-- 音乐播放服务 -->
         <service android:name=".Music.MusicService" />
