@@ -120,13 +120,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TextViewActivity"
+            android:name=".UI.TextViewActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".ButtonActivity" />
-        <activity android:name=".EditTextActivity" />
-        <activity android:name=".RadioButtonActivity" />
-        <activity android:name=".CheckBoxActivity" />
-        <activity android:name=".ImageViewActivity" />
+        <activity android:name=".UI.ButtonActivity" />
+        <activity android:name=".UI.EditTextActivity" />
+        <activity android:name=".UI.RadioButtonActivity" />
+        <activity android:name=".UI.CheckBoxActivity" />
+        <activity android:name=".UI.ImageViewActivity" />
         <activity android:name=".ListView.ListViewActivity" />
         <activity android:name=".GridView.GridViewActivity" />
         <activity android:name=".RecycleView.RecyclerViewActivity" />
@@ -135,20 +135,20 @@
         <activity android:name=".RecycleView.GridRecyclerViewActivity" />
         <activity android:name=".RecycleView.WaterfallRecyclerViewActivity" />
         <activity android:name=".WebView.WebViewActivity" />
-        <activity android:name=".ToastActivity" />
+        <activity android:name=".UI.ToastActivity" />
         <activity android:name=".UIActivity" />
-        <activity android:name=".DialogActivity" />
-        <activity android:name=".ProgressActivity" />
-        <activity android:name=".CustomDialogActivity" />
-        <activity android:name=".PopupWindowActivity" />
-        <activity android:name=".LifeCycleActivity" />
+        <activity android:name=".UI.DialogActivity" />
+        <activity android:name=".UI.ProgressActivity" />
+        <activity android:name=".UI.CustomDialogActivity" />
+        <activity android:name=".UI.PopupWindowActivity" />
+        <activity android:name=".UI.LifeCycleActivity" />
         <activity android:name=".Fragment.ContainerActivity" />
         <activity android:name=".Event_Listener.EventListenerActivity" />
         <activity android:name=".Handler.HandlerActivity" />
         <activity android:name=".datastorage.DataStorageActivity" />
         <activity android:name=".datastorage.SharedPreferencesActivity" />
         <activity android:name=".datastorage.FileSaveActivity" />
-        <activity android:name=".DatePickerActivity" />
+        <activity android:name=".UI.DatePickerActivity" />
         <activity android:name=".Parse.XmlParseActivity" />
         <activity android:name=".SQLite.SqlLiteActivity" />
         <activity android:name=".ListView.ExpandableListViewActivity" />

@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.helloworld.AsynTask.AsynTaskActivity;
 import com.example.helloworld.BaiduMap.BaiduMapListActivity;
 import com.example.helloworld.BroadCast.ScreenLockReceiver;
 import com.example.helloworld.Event_Listener.EventListenerActivity;
@@ -18,6 +19,7 @@ import com.example.helloworld.ImageLoad.ImageListActivity;
 import com.example.helloworld.Music.MusicListActivity;
 import com.example.helloworld.Network.NetWorkActivity;
 import com.example.helloworld.Notice.SMSNoticeActivity;
+import com.example.helloworld.UI.LifeCycleActivity;
 import com.example.helloworld.datastorage.DataStorageActivity;
 
 import butterknife.BindView;
@@ -48,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
     Button mBtnImage;
     @BindView(R.id.btn_baidumap)
     Button mBtnBaidumap;
+    @BindView(R.id.btn_aysnTask)
+    Button mBtnAysnTask;
     private ScreenLockReceiver mReceiver;
 
 
@@ -89,7 +93,13 @@ public class MainActivity extends AppCompatActivity {
         unregisterReceiver(mReceiver);
     }
 
-    @OnClick({R.id.btn_ui, R.id.btn_lifecycle, R.id.btn_event, R.id.btn_handler, R.id.btn_data, R.id.btn_network, R.id.btn_music, R.id.btn_notify, R.id.btn_image, R.id.btn_baidumap})
+    @OnClick({R.id.btn_ui, R.id.btn_lifecycle,
+            R.id.btn_event, R.id.btn_handler,
+            R.id.btn_data, R.id.btn_network,
+            R.id.btn_music, R.id.btn_notify,
+            R.id.btn_image, R.id.btn_baidumap,
+            R.id.btn_aysnTask
+    })
     public void onViewClicked(View view) {
         Intent intent = null;
         switch (view.getId()) {
@@ -124,6 +134,10 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.btn_baidumap:
                 intent = new Intent(this, BaiduMapListActivity.class);
+                break;
+
+            case R.id.btn_aysnTask:
+                intent = new Intent(this, AsynTaskActivity.class);
                 break;
 
         }
