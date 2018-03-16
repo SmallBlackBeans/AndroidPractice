@@ -6,16 +6,20 @@ buildscript {
         google()
         jcenter()
     }
+
+
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         classpath 'com.didi.virtualapk:gradle:0.9.4'
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        //bugs
+        classpath 'com.github.spotbugs:spotbugs:3.1.0'
+        //classpath 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.7.1'
     }
 }
+
 
 allprojects {
     repositories {
