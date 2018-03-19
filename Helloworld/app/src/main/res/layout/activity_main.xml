@@ -16,78 +16,25 @@
             android:id="@+id/btn_ui"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="UI" />
+            android:text="UI知识" />
 
         <Button
-            android:id="@+id/btn_lifecycle"
+            android:id="@+id/btn_basic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="LifeCycle"
+            android:text="基础知识"
             android:textAllCaps="false"/>
 
         <Button
-            android:id="@+id/btn_event"
+            android:id="@+id/btn_project"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="事件机制"
-            android:textAllCaps="false"/>
-
-
-        <Button
-            android:id="@+id/btn_handler"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Handler消息处理"
+            android:text="简单项目"
             android:textAllCaps="false"/>
 
 
 
-        <Button
-            android:id="@+id/btn_data"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="数据存储"
-            android:textAllCaps="false"/>
 
-        <Button
-            android:id="@+id/btn_network"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="网络获取"
-            android:textAllCaps="false"/>
-
-        <Button
-            android:id="@+id/btn_music"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="音乐播放器"
-            android:textAllCaps="false"/>
-
-        <Button
-            android:id="@+id/btn_notify"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="消息通知"
-            android:textAllCaps="false"/>
-
-        <Button
-            android:id="@+id/btn_image"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="图片相关"
-            android:textAllCaps="false"/>
-        <Button
-            android:id="@+id/btn_baidumap"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="百度地图"
-            android:textAllCaps="false"/>
-        <Button
-            android:id="@+id/btn_aysnTask"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="后台网络请求"
-            android:textAllCaps="false"/>
 
 
     </LinearLayout>

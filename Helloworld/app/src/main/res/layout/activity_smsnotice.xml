@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingTop="20dp"
-    tools:context="com.example.helloworld.Notice.SMSNoticeActivity">
+    tools:context=".Basic.Notice.SMSNoticeActivity">
 
     <Button
         android:id="@+id/btn_showTip2"

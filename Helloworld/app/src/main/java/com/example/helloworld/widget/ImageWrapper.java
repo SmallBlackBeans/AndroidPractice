@@ -13,9 +13,7 @@ import com.example.helloworld.R;
 
 import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 
 
 /**

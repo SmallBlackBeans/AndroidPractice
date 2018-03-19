@@ -3,13 +3,11 @@ package com.example.helloworld.utils;
 import android.content.Context;
 import android.util.Xml;
 
-import com.example.helloworld.Network.NewsBean;
+import com.example.helloworld.Basic.Network.NewsBean;
 
 import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.ArrayList;
 

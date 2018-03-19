@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:hxc="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.helloworld.ScreenAdapter.PercentActivity">
+    tools:context=".UI.ScreenAdapter.PercentActivity">
 
 
     <TextView

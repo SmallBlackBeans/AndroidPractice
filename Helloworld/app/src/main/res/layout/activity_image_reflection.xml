@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="10dp"
     android:orientation="vertical"
-    tools:context="com.example.helloworld.ImageLoad.ImageReflectionActivity">
+    tools:context=".Basic.ImageLoad.ImageReflectionActivity">
 
     <Button
         android:layout_width="wrap_content"

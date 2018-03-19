@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context="com.example.helloworld.ImageLoad.ImageTranslateActivity">
+    tools:context=".Basic.ImageLoad.ImageTranslateActivity">
 
     <ImageView
         android:id="@+id/iv"

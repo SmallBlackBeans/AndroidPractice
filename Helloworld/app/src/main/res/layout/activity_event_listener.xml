@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="15dp"
     android:orientation="vertical"
-    tools:context="com.example.helloworld.Event_Listener.EventListenerActivity">
+    tools:context=".Basic.Event_Listener.EventListenerActivity">
 
 
 

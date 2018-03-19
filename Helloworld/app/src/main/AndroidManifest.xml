@@ -36,7 +36,7 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
     <application
-        android:name=".Application.DemoApplcaition"
+        android:name=".Basic.Application.DemoApplcaition"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -50,14 +50,14 @@
             android:value="oTOlcTcHzGfGwdXOuIlNoQKSYqTFmIDu" />
 
         <!-- 所有的广播 -->
-        <receiver android:name=".BroadCast.PhoneReceiver">
+        <receiver android:name=".Basic.BroadCast.PhoneReceiver">
             <intent-filter>
 
                 <!-- 监听手机打出去 -->
                 <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".BroadCast.SDCardReceiver">
+        <receiver android:name=".Basic.BroadCast.SDCardReceiver">
             <intent-filter>
 
                 <!-- SD 卡安装/卸载事件 -->
@@ -67,14 +67,14 @@
                 <data android:scheme="file" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".BroadCast.SmsReceiver">
+        <receiver android:name=".Basic.BroadCast.SmsReceiver">
             <intent-filter android:priority="1000">
 
                 <!-- 接受短信 -->
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".BroadCast.ApkStatusReceiver">
+        <receiver android:name=".Basic.BroadCast.ApkStatusReceiver">
             <intent-filter>
 
                 <!-- 应用安装 -->
@@ -85,7 +85,7 @@
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".BroadCast.BootReceiver">
+        <receiver android:name=".Basic.BroadCast.BootReceiver">
             <intent-filter>
 
                 <!-- 开机监听 -->
@@ -94,12 +94,12 @@
         </receiver>
 
         <!-- 所有的服务 -->
-        <service android:name=".Service.MyService" />
-        <service android:name=".Service.CallService" />
-        <service android:name=".Service.BootService" />
+        <service android:name=".Basic.Service.MyService" />
+        <service android:name=".Basic.Service.CallService" />
+        <service android:name=".Basic.Service.BootService" />
 
         <!-- 模拟远程调用 -->
-        <service android:name=".RemoteService.AlipayService">
+        <service android:name=".Basic.RemoteService.AlipayService">
             <intent-filter>
                 <action android:name="com.example.helloworld.action.ALiPAY" />
             </intent-filter>
@@ -110,7 +110,7 @@
             android:process=":remote" />
 
         <!-- 音乐播放服务 -->
-        <service android:name=".Music.MusicService" />
+        <service android:name=".Basic.Music.MusicService" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -127,14 +127,14 @@
         <activity android:name=".UI.RadioButtonActivity" />
         <activity android:name=".UI.CheckBoxActivity" />
         <activity android:name=".UI.ImageViewActivity" />
-        <activity android:name=".ListView.ListViewActivity" />
-        <activity android:name=".GridView.GridViewActivity" />
-        <activity android:name=".RecycleView.RecyclerViewActivity" />
-        <activity android:name=".RecycleView.LinearRecyclerViewActivity" />
-        <activity android:name=".RecycleView.HorRecyclerViewActivity" />
-        <activity android:name=".RecycleView.GridRecyclerViewActivity" />
-        <activity android:name=".RecycleView.WaterfallRecyclerViewActivity" />
-        <activity android:name=".WebView.WebViewActivity" />
+        <activity android:name=".UI.ListView.ListViewActivity" />
+        <activity android:name=".UI.GridView.GridViewActivity" />
+        <activity android:name=".UI.RecycleView.RecyclerViewActivity" />
+        <activity android:name=".UI.RecycleView.LinearRecyclerViewActivity" />
+        <activity android:name=".UI.RecycleView.HorRecyclerViewActivity" />
+        <activity android:name=".UI.RecycleView.GridRecyclerViewActivity" />
+        <activity android:name=".UI.RecycleView.WaterfallRecyclerViewActivity" />
+        <activity android:name=".UI.WebView.WebViewActivity" />
         <activity android:name=".UI.ToastActivity" />
         <activity android:name=".UIActivity" />
         <activity android:name=".UI.DialogActivity" />
@@ -142,40 +142,43 @@
         <activity android:name=".UI.CustomDialogActivity" />
         <activity android:name=".UI.PopupWindowActivity" />
         <activity android:name=".UI.LifeCycleActivity" />
-        <activity android:name=".Fragment.ContainerActivity" />
-        <activity android:name=".Event_Listener.EventListenerActivity" />
-        <activity android:name=".Handler.HandlerActivity" />
-        <activity android:name=".datastorage.DataStorageActivity" />
-        <activity android:name=".datastorage.SharedPreferencesActivity" />
-        <activity android:name=".datastorage.FileSaveActivity" />
+        <activity android:name=".UI.Fragment.ContainerActivity" />
+        <activity android:name=".Basic.Event_Listener.EventListenerActivity" />
+        <activity android:name=".Basic.Handler.HandlerActivity" />
+        <activity android:name=".Basic.datastorage.DataStorageActivity" />
+        <activity android:name=".Basic.datastorage.SharedPreferencesActivity" />
+        <activity android:name=".Basic.datastorage.FileSaveActivity" />
         <activity android:name=".UI.DatePickerActivity" />
-        <activity android:name=".Parse.XmlParseActivity" />
-        <activity android:name=".SQLite.SqlLiteActivity" />
-        <activity android:name=".ListView.ExpandableListViewActivity" />
-        <activity android:name=".Network.ImageLookerActivity" />
-        <activity android:name=".Network.NewsListActivity" />
-        <activity android:name=".Network.NetWorkActivity" />
-        <activity android:name=".Network.AsycHttpClientActivity" />
-        <activity android:name=".Network.MutilThreadDownLoadActivity" />
-        <activity android:name=".RemoteService.TaobaoActivity" />
-        <activity android:name=".Music.MusicListActivity" />
-        <activity android:name=".Notice.SMSNoticeActivity" />
-        <activity android:name=".ImageLoad.BigImageLoadActivity" />
-        <activity android:name=".ImageLoad.ImageListActivity" />
-        <activity android:name=".ImageLoad.ImageScaleActivity" />
-        <activity android:name=".ImageLoad.ImageRotateActivity" />
-        <activity android:name=".ImageLoad.ImageTranslateActivity" />
-        <activity android:name=".ImageLoad.ImageReflectionActivity" />
-        <activity android:name=".MemoryLeak.ReferenceActivity" />
-        <activity android:name=".MemoryLeak.HandlerLeakActivity" />
-        <activity android:name=".MemoryLeak.InnerClassStaticInstanceActivity" />
-        <activity android:name=".MemoryLeak.ContextLeakActivity" />
-        <activity android:name=".ScreenAdapter.PercentActivity" />
-        <activity android:name=".BaiduMap.LocationActivity" />
-        <activity android:name=".BaiduMap.MarkerActivity" />
-        <activity android:name=".BaiduMap.BaiduMapListActivity" />
-        <activity android:name=".Optimize.ImageOptimizeActivity" />
-        <activity android:name=".AsynTask.AsynTaskActivity"></activity>
+        <activity android:name=".Basic.Parse.XmlParseActivity" />
+        <activity android:name=".Basic.SQLite.SqlLiteActivity" />
+        <activity android:name=".UI.ListView.ExpandableListViewActivity" />
+        <activity android:name=".Basic.Network.ImageLookerActivity" />
+        <activity android:name=".Basic.Network.NewsListActivity" />
+        <activity android:name=".Basic.Network.NetWorkActivity" />
+        <activity android:name=".Basic.Network.AsycHttpClientActivity" />
+        <activity android:name=".Basic.Network.MutilThreadDownLoadActivity" />
+        <activity android:name=".Basic.RemoteService.TaobaoActivity" />
+        <activity android:name=".Basic.Music.MusicListActivity" />
+        <activity android:name=".Basic.Notice.SMSNoticeActivity" />
+        <activity android:name=".Basic.ImageLoad.BigImageLoadActivity" />
+        <activity android:name=".Basic.ImageLoad.ImageListActivity" />
+        <activity android:name=".Basic.ImageLoad.ImageScaleActivity" />
+        <activity android:name=".Basic.ImageLoad.ImageRotateActivity" />
+        <activity android:name=".Basic.ImageLoad.ImageTranslateActivity" />
+        <activity android:name=".Basic.ImageLoad.ImageReflectionActivity" />
+        <activity android:name=".Basic.MemoryLeak.ReferenceActivity" />
+        <activity android:name=".Basic.MemoryLeak.HandlerLeakActivity" />
+        <activity android:name=".Basic.MemoryLeak.InnerClassStaticInstanceActivity" />
+        <activity android:name=".Basic.MemoryLeak.ContextLeakActivity" />
+        <activity android:name=".UI.ScreenAdapter.PercentActivity" />
+        <activity android:name=".Basic.BaiduMap.LocationActivity" />
+        <activity android:name=".Basic.BaiduMap.MarkerActivity" />
+        <activity android:name=".Basic.BaiduMap.BaiduMapListActivity" />
+        <activity android:name=".Basic.Optimize.ImageOptimizeActivity" />
+        <activity android:name=".Basic.AsynTask.AsynTaskActivity" />
+        <activity android:name=".BasicActivity" />
+        <activity android:name=".ProjectDemoActivity" />
+        <activity android:name=".Projects.Ad.SplashActivity"></activity>
     </application>
 
 </manifest>

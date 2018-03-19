@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="14dp"
-    tools:context="com.example.helloworld.datastorage.DataStorageActivity">
+    tools:context=".Basic.datastorage.DataStorageActivity">
 
 
     <Button

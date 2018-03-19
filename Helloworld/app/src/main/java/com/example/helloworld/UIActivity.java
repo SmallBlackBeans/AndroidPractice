@@ -6,11 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.helloworld.Fragment.ContainerActivity;
-import com.example.helloworld.GridView.GridViewActivity;
-import com.example.helloworld.ListView.ExpandableListViewActivity;
-import com.example.helloworld.ListView.ListViewActivity;
-import com.example.helloworld.RecycleView.RecyclerViewActivity;
+import com.example.helloworld.UI.Fragment.ContainerActivity;
+import com.example.helloworld.UI.GridView.GridViewActivity;
+import com.example.helloworld.UI.ListView.ExpandableListViewActivity;
+import com.example.helloworld.UI.ListView.ListViewActivity;
+import com.example.helloworld.UI.RecycleView.RecyclerViewActivity;
 import com.example.helloworld.UI.ButtonActivity;
 import com.example.helloworld.UI.CheckBoxActivity;
 import com.example.helloworld.UI.CustomDialogActivity;
@@ -23,11 +23,14 @@ import com.example.helloworld.UI.ProgressActivity;
 import com.example.helloworld.UI.RadioButtonActivity;
 import com.example.helloworld.UI.TextViewActivity;
 import com.example.helloworld.UI.ToastActivity;
-import com.example.helloworld.WebView.WebViewActivity;
+import com.example.helloworld.UI.WebView.WebViewActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * UI知识学习
+ */
 public class UIActivity extends AppCompatActivity {
 
 
