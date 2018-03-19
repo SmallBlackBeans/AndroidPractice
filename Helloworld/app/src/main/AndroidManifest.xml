@@ -112,6 +112,11 @@
         <!-- 音乐播放服务 -->
         <service android:name=".Basic.Music.MusicService" />
 
+
+        <!--图片下载-->
+        <service android:name=".Projects.Ad.service.DownloadService"/>
+
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

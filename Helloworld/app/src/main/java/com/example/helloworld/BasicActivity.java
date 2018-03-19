@@ -29,6 +29,8 @@ import butterknife.OnClick;
 
 /**
  * 基础知识学习
+ * 设计模式
+ * 单例 工厂 代理 享元 责任链 观察者 创建者
  */
 public class BasicActivity extends AppCompatActivity {
 
