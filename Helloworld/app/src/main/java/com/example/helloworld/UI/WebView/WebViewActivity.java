@@ -8,12 +8,15 @@ import android.view.KeyEvent;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.example.helloworld.R;
 
 public class WebViewActivity extends AppCompatActivity {
+
+    public static final String LINK_URL = "url_action";
 
     private WebView mWebView;
 
@@ -28,23 +31,43 @@ public class WebViewActivity extends AppCompatActivity {
         //加载本地Url
         //mWebView.loadUrl("file:///android_asset/test.html");
 
-        //加载网络
+        //启用JavaScript 加载网络
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.setWebViewClient(new MyWebViewClient());
         mWebView.setWebChromeClient(new MyChromeWebClient());
-        mWebView.loadUrl("https://m.baidu.com");
 
+
+
+        mWebView.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+        mWebView.getSettings().setLoadWithOverviewMode(true);
+        mWebView.getSettings().setUseWideViewPort(true);
+
+
+        String url = getIntent().getExtras().getString(LINK_URL);
+        if (url.length() == 0) {
+            url = "https://www.baidu.com";
+        }
+        mWebView.loadUrl(url);
 
 
     }
 
+
+//    @Override
+//    public void onBackPressed() {
+//        if (mWebView.canGoBack()) {
+//            mWebView.goBack();
+//        } else {
+//            super.onBackPressed();
+//        }
+//    }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK && mWebView.canGoBack()) {
             mWebView.goBack();
             return true;
-        }else {
+        } else {
             return super.onKeyDown(keyCode, event);
         }
     }
@@ -52,6 +75,7 @@ public class WebViewActivity extends AppCompatActivity {
 
     //还在本webview中打开链接
     class MyWebViewClient extends WebViewClient {
+        //重定向不要抛到系统浏览器
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
             view.loadUrl(request.getUrl().toString());
@@ -69,14 +93,13 @@ public class WebViewActivity extends AppCompatActivity {
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
             Log.d("webView", "onPageStarted...");
-            view.evaluateJavascript("javascript:alert('hello')", new ValueCallback<String>() {
-                @Override
-                public void onReceiveValue(String s) {
-
-                    Log.d("haha",s);
-
-                }
-            });
+//            view.evaluateJavascript("javascript:alert('hello')", new ValueCallback<String>() {
+//                @Override
+//                public void onReceiveValue(String s) {
+//                    Log.d("haha", s);
+//
+//                }
+//            });
         }
     }
 

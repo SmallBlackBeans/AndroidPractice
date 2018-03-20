@@ -183,7 +183,8 @@
         <activity android:name=".Basic.AsynTask.AsynTaskActivity" />
         <activity android:name=".BasicActivity" />
         <activity android:name=".ProjectDemoActivity" />
-        <activity android:name=".Projects.Ad.SplashActivity"></activity>
+        <activity android:name=".Projects.Ad.SplashActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 
 </manifest>

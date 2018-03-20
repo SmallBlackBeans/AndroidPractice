@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.helloworld.Projects.Ad.SplashActivity">
 
 
@@ -11,14 +12,19 @@
         android:id="@+id/buttom_img"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="15dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
 
         <ImageView
-            android:scaleType="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:scaleType="center"
             android:src="@drawable/biz_ad_slogan" />
+
     </LinearLayout>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -28,8 +34,20 @@
         <ImageView
             android:id="@+id/img_ad"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:scaleType="fitXY" />
 
+        <com.example.helloworld.Projects.Ad.View.SkipTimeView
+            android:id="@+id/skip_time"
+            app:circleColor="@color/color96"
+            app:innerColor="@color/colorGray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="14dp"
+            android:layout_marginTop="14dp"
+            />
     </RelativeLayout>
+
 
 </RelativeLayout>

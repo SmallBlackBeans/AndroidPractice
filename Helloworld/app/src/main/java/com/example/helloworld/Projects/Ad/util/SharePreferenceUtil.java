@@ -10,7 +10,7 @@ import android.content.SharedPreferences;
 public class SharePreferenceUtil {
     public static final String HANXIAOCU_FILE_NAME = "hanxiaocu_cache";
 
-    public static void saveJson(Context context, String title, String content) {
+    public static void setString(Context context, String title, String content) {
         SharedPreferences preferences = context.getSharedPreferences(HANXIAOCU_FILE_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString(title, content);
@@ -18,23 +18,37 @@ public class SharePreferenceUtil {
         editor.apply();//空闲时写
     }
 
-    public static String getJson(Context context, String title) {
+    public static String getString(Context context, String title) {
         SharedPreferences preferences = context.getSharedPreferences(HANXIAOCU_FILE_NAME, Context.MODE_PRIVATE);
         return preferences.getString(title,"");
     }
 
-
-    public static void saveJsonTime(Context context, String title, int time) {
+    
+    public static void setInt(Context context, String title, int i) {
         SharedPreferences preferences = context.getSharedPreferences(HANXIAOCU_FILE_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putInt(title, time);
+        editor.putInt(title, i);
         //editor.commit();//立马写入
         editor.apply();//空闲时写
     }
 
-    public static int getSaveJsonTime(Context context, String title) {
+    public static int getInt(Context context, String title) {
         SharedPreferences preferences = context.getSharedPreferences(HANXIAOCU_FILE_NAME, Context.MODE_PRIVATE);
         return preferences.getInt(title,0);
+    }
+
+
+    public static void setLong(Context context, String title, Long time) {
+        SharedPreferences preferences = context.getSharedPreferences(HANXIAOCU_FILE_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putLong(title, time);
+        //editor.commit();//立马写入
+        editor.apply();//空闲时写
+    }
+
+    public static long getLong(Context context, String title) {
+        SharedPreferences preferences = context.getSharedPreferences(HANXIAOCU_FILE_NAME, Context.MODE_PRIVATE);
+        return preferences.getLong(title,0);
     }
 
 

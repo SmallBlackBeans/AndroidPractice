@@ -12,6 +12,7 @@ import android.util.Log;
 import com.example.helloworld.Projects.Ad.Bean.AdDetail;
 import com.example.helloworld.Projects.Ad.Bean.Ads;
 import com.example.helloworld.Projects.Ad.Constant;
+import com.example.helloworld.Projects.Ad.util.ImageUtil;
 import com.example.helloworld.Projects.Ad.util.Md5Helper;
 
 import org.xutils.common.util.MD5;
@@ -51,7 +52,7 @@ public class DownloadService extends IntentService {
                     String md5Cache_name = Md5Helper.toMD5(img);
 
                     //先判断本地有没有
-                    if (!checkImageIsAreadyCached(md5Cache_name)) {
+                    if (!ImageUtil.checkImageIsAreadyCached(md5Cache_name)) {
                         Bitmap bitmap = downLoadImage(img);
                         if (null != bitmap) {
                             saveToCache(bitmap, md5Cache_name);
@@ -112,15 +113,5 @@ public class DownloadService extends IntentService {
         }
     }
 
-    private boolean checkImageIsAreadyCached(String cache_name) {
-        File SD = Environment.getExternalStorageDirectory();
-        File cacheFile = new File(SD, cache_name + ".jpg");
-        if (cacheFile.exists()) {
-            Bitmap bitmap = BitmapFactory.decodeFile(cacheFile.getAbsolutePath());
-            if (bitmap != null) {
-                return true;
-            }
-        }
-        return false;
-    }
+
 }
