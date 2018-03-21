@@ -65,7 +65,7 @@ public class SplashActivity extends AppCompatActivity {
     private static final String IMAGE_INDEX = "image_index";
 
 
-    int lenght = 2 * 1000;
+    int lenght = 5 * 1000;
     int space = 250;
     int now = 0;
     int total;
@@ -75,10 +75,15 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         //开启全屏的设置  取消状态栏
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //4.4沉浸式
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
+
+
         setContentView(R.layout.activity_splash);
         ButterKnife.bind(this);
 
@@ -152,7 +157,7 @@ public class SplashActivity extends AppCompatActivity {
 
         } else {
             //没有图片 3秒跳过
-            mHandler.postDelayed(NoImageGotoMain, 3000);
+            mHandler.postDelayed(NoImageGotoMain, 5000);
         }
     }
 
@@ -223,9 +228,9 @@ public class SplashActivity extends AppCompatActivity {
 
 
     private void gotoMain() {
-        Intent intent = new Intent();
-        intent.setClass(SplashActivity.this, MainActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent();
+//        intent.setClass(SplashActivity.this, MainActivity.class);
+//        startActivity(intent);
         finish();
     }
 
@@ -275,8 +280,8 @@ public class SplashActivity extends AppCompatActivity {
                     if (now < activity.total) {
                         activity.mSkipTime.setProgress(activity.total, now);
                     } else {
-                        this.removeCallbacks(activity.refreshTime);
-                        activity.gotoMain();
+                        //this.removeCallbacks(activity.refreshTime);
+                        //activity.gotoMain();
                     }
                 }
                 break;

@@ -30,7 +30,7 @@ public class SkipTimeView extends View {
 
     //文案
     String content = "跳过";
-    int padding = 5;
+    int padding = 8;
     //内圆直径
     int inner;
     //外圆直径
@@ -48,30 +48,30 @@ public class SkipTimeView extends View {
     OnTimeClickListener mListener;
 
     public SkipTimeView(Context context, AttributeSet attrs) {
-        super(context);
+        super(context,attrs);
         //获取xml的属性
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.SkipTimeView);
-        int inner = array.getColor(R.styleable.SkipTimeView_innerColor, Color.BLACK);
-        int outer = array.getColor(R.styleable.SkipTimeView_circleColor, Color.GREEN);
+        int innerColor = array.getColor(R.styleable.SkipTimeView_innerColor, Color.BLACK);
+        int outerColor = array.getColor(R.styleable.SkipTimeView_circleColor, Color.GREEN);
 
 
         mTextPaint = new TextPaint();
         //抗锯齿
         mTextPaint.setFlags(Paint.ANTI_ALIAS_FLAG);
-        mTextPaint.setTextSize(30);
+        mTextPaint.setTextSize(40);
         mTextPaint.setColor(Color.WHITE);
 
         //内圈画笔
         circleP = new Paint();
         circleP.setFlags(Paint.ANTI_ALIAS_FLAG);
-        circleP.setColor(Color.BLUE);
+        circleP.setColor(innerColor);
 
         //外圈
         outerP = new Paint();
         outerP.setFlags(Paint.ANTI_ALIAS_FLAG);
-        outerP.setColor(Color.GREEN);
+        outerP.setColor(outerColor);
         outerP.setStyle(Paint.Style.STROKE);
-        outerP.setStrokeWidth(2);
+        outerP.setStrokeWidth(3);
 
         //文字宽度
         float text_width = mTextPaint.measureText(content);
