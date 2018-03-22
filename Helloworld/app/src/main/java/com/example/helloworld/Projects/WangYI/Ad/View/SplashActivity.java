@@ -1,4 +1,4 @@
-package com.example.helloworld.Projects.WangYI.Ad;
+package com.example.helloworld.Projects.WangYI.Ad.View;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -14,11 +14,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
-import com.example.helloworld.MainActivity;
 import com.example.helloworld.Projects.WangYI.Ad.Bean.AdDetail;
 import com.example.helloworld.Projects.WangYI.Ad.Bean.Ads;
-import com.example.helloworld.Projects.WangYI.Ad.View.OnTimeClickListener;
-import com.example.helloworld.Projects.WangYI.Ad.View.SkipTimeView;
+import com.example.helloworld.Projects.WangYI.Ad.Constant;
 import com.example.helloworld.Projects.WangYI.Ad.service.DownloadService;
 import com.example.helloworld.Projects.WangYI.Ad.util.ImageUtil;
 import com.example.helloworld.Projects.WangYI.Ad.util.JsonUtil;

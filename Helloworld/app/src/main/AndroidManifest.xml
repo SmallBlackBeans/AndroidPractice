@@ -182,7 +182,7 @@
         <activity android:name=".BasicActivity" />
         <activity android:name=".ProjectDemoActivity" />
         <activity
-            android:name=".Projects.WangYI.Ad.SplashActivity"
+            android:name=".Projects.WangYI.Ad.View.SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".Projects.WangYI.Home.View.Activity.WyHomeIndexActivity"></activity>
     </application>

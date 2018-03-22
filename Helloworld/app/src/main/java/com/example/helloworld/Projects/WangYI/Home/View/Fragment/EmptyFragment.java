@@ -13,12 +13,12 @@ import com.example.helloworld.R;
  * Created by hanchenghai on 2018/3/22.
  */
 
-public class NewsFragment extends Fragment {
+public class EmptyFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_news, container, false);//attachToRoot 是否自动添加到父容器
+        View view = inflater.inflate(R.layout.fragment_empty, container, false);//attachToRoot 是否自动添加到父容器
         return view;
     }
 }
