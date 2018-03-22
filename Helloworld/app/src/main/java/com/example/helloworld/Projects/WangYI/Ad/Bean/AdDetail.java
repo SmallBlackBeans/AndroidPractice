@@ -1,4 +1,4 @@
-package com.example.helloworld.Projects.Ad.Bean;
+package com.example.helloworld.Projects.WangYI.Ad.Bean;
 
 import java.io.Serializable;
 import java.util.List;

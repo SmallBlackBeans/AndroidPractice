@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.helloworld.Projects.Ad.SplashActivity">
+    tools:context=".Projects.WangYI.Ad.SplashActivity">
 
 
     <LinearLayout
@@ -37,7 +37,7 @@
             android:layout_height="match_parent"
             android:scaleType="fitXY" />
 
-        <com.example.helloworld.Projects.Ad.View.SkipTimeView
+        <com.example.helloworld.Projects.WangYI.Ad.View.SkipTimeView
             android:id="@+id/skip_time"
             app:circleColor="@color/color96"
             app:innerColor="@color/colorGray"

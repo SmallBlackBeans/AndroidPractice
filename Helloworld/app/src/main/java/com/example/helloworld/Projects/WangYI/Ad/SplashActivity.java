@@ -1,4 +1,4 @@
-package com.example.helloworld.Projects.Ad;
+package com.example.helloworld.Projects.WangYI.Ad;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -15,15 +15,15 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.example.helloworld.MainActivity;
-import com.example.helloworld.Projects.Ad.Bean.AdDetail;
-import com.example.helloworld.Projects.Ad.Bean.Ads;
-import com.example.helloworld.Projects.Ad.View.OnTimeClickListener;
-import com.example.helloworld.Projects.Ad.View.SkipTimeView;
-import com.example.helloworld.Projects.Ad.service.DownloadService;
-import com.example.helloworld.Projects.Ad.util.ImageUtil;
-import com.example.helloworld.Projects.Ad.util.JsonUtil;
-import com.example.helloworld.Projects.Ad.util.Md5Helper;
-import com.example.helloworld.Projects.Ad.util.SharePreferenceUtil;
+import com.example.helloworld.Projects.WangYI.Ad.Bean.AdDetail;
+import com.example.helloworld.Projects.WangYI.Ad.Bean.Ads;
+import com.example.helloworld.Projects.WangYI.Ad.View.OnTimeClickListener;
+import com.example.helloworld.Projects.WangYI.Ad.View.SkipTimeView;
+import com.example.helloworld.Projects.WangYI.Ad.service.DownloadService;
+import com.example.helloworld.Projects.WangYI.Ad.util.ImageUtil;
+import com.example.helloworld.Projects.WangYI.Ad.util.JsonUtil;
+import com.example.helloworld.Projects.WangYI.Ad.util.Md5Helper;
+import com.example.helloworld.Projects.WangYI.Ad.util.SharePreferenceUtil;
 import com.example.helloworld.R;
 
 import java.io.File;
@@ -31,8 +31,6 @@ import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -46,13 +44,8 @@ import okhttp3.Response;
 public class SplashActivity extends AppCompatActivity {
 
     private final OkHttpClient mClient = new OkHttpClient();
-
-    @BindView(R.id.img_ad)
-    ImageView mImgAd;
-
-    //倒计时
-    @BindView(R.id.skip_time)
-    SkipTimeView mSkipTime;
+    private ImageView mImgAd;
+    private SkipTimeView mSkipTime;
 
 
     private Ads mAds;
@@ -75,16 +68,24 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         //开启全屏的设置  取消状态栏
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //4.4沉浸式
+        //View decorView = getWindow().getDecorView();
+        //decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN|View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_IMMERSIVe);
+
         setContentView(R.layout.activity_splash);
-        ButterKnife.bind(this);
+        mImgAd = findViewById(R.id.img_ad);
+        mSkipTime = findViewById(R.id.skip_time);
+
 
         initView();
         getAds();
         showImage();
+
     }
 
 

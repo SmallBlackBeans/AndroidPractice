@@ -1,4 +1,4 @@
-package com.example.helloworld.Projects.Ad.service;
+package com.example.helloworld.Projects.WangYI.Ad.service;
 
 import android.app.IntentService;
 import android.content.Intent;
@@ -9,19 +9,14 @@ import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.example.helloworld.Projects.Ad.Bean.AdDetail;
-import com.example.helloworld.Projects.Ad.Bean.Ads;
-import com.example.helloworld.Projects.Ad.Constant;
-import com.example.helloworld.Projects.Ad.util.ImageUtil;
-import com.example.helloworld.Projects.Ad.util.Md5Helper;
-
-import org.xutils.common.util.MD5;
+import com.example.helloworld.Projects.WangYI.Ad.Bean.AdDetail;
+import com.example.helloworld.Projects.WangYI.Ad.Bean.Ads;
+import com.example.helloworld.Projects.WangYI.Ad.Constant;
+import com.example.helloworld.Projects.WangYI.Ad.util.ImageUtil;
+import com.example.helloworld.Projects.WangYI.Ad.util.Md5Helper;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.Serializable;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.helloworld.Projects.Ad.View;
+package com.example.helloworld.Projects.WangYI.Ad.View;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -6,7 +6,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.support.annotation.Nullable;
 import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -48,7 +47,7 @@ public class SkipTimeView extends View {
     OnTimeClickListener mListener;
 
     public SkipTimeView(Context context, AttributeSet attrs) {
-        super(context);
+        super(context,attrs);
         //获取xml的属性
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.SkipTimeView);
         int inner = array.getColor(R.styleable.SkipTimeView_innerColor, Color.BLACK);

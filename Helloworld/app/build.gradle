@@ -31,6 +31,13 @@ android {
             jniLibs.srcDir 'libs'
             //说明so的路径为该libs路径，关联所有地图SDK的so文件
             java.srcDirs = ['src/main/java']
+            res.srcDirs =
+                    [
+                            'src/main/res/layout/basic',
+                            'src/main/res/layout/wangyi',
+                            'src/main/res/layout',
+                            'src/main/res'
+                    ]
         }
     }
 
@@ -90,8 +97,10 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
     compile 'jp.wasabeef:glide-transformations:2.0.2'
     compile 'com.orhanobut:logger:2.1.1'
+
     compile 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
     //compile 'com.idescout.sql:sqlscout-server:4.0'
     debugCompile 'com.amitshekhar.android:debug-db:1.0.0'
     //    compile 'com.didi.virtualapk:core:0.9.1'
@@ -112,11 +121,11 @@ dependencies {
     implementation files('libs/baidumapapi_util_v4_0_0.jar')
     implementation files('libs/locSDK_6.13.jar')
 
-
     //http
     testImplementation 'com.squareup.okhttp3:mockwebserver:3.10.0'
 
 }
+
 
 
 

@@ -34,8 +34,6 @@ import butterknife.OnClick;
  */
 public class BasicActivity extends AppCompatActivity {
 
-    @BindView(R.id.btn_ui)
-    Button mBtnUi;
     @BindView(R.id.btn_lifecycle)
     Button mBtnLifecycle;
     @BindView(R.id.btn_event)
@@ -63,8 +61,8 @@ public class BasicActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basic);
-        //SqlScoutServer.create(this, getPackageName());
         ButterKnife.bind(this);
+        //SqlScoutServer.create(this, getPackageName());
 
         //动态获取存储权限
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
@@ -97,7 +95,7 @@ public class BasicActivity extends AppCompatActivity {
         unregisterReceiver(mReceiver);
     }
 
-    @OnClick({R.id.btn_ui, R.id.btn_lifecycle,
+    @OnClick({R.id.btn_lifecycle,
             R.id.btn_event, R.id.btn_handler,
             R.id.btn_data, R.id.btn_network,
             R.id.btn_music, R.id.btn_notify,

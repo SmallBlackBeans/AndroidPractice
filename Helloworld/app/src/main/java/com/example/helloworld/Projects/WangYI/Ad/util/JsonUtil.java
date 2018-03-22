@@ -1,4 +1,4 @@
-package com.example.helloworld.Projects.Ad.util;
+package com.example.helloworld.Projects.WangYI.Ad.util;
 
 import android.text.TextUtils;
 

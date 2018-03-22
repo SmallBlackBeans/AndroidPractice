@@ -1,10 +1,10 @@
-package com.example.helloworld.Projects.Ad.util;
+package com.example.helloworld.Projects.WangYI.Ad.util;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Environment;
 
-import com.example.helloworld.Projects.Ad.Constant;
+import com.example.helloworld.Projects.WangYI.Ad.Constant;
 
 import java.io.File;
 

@@ -112,10 +112,8 @@
         <!-- 音乐播放服务 -->
         <service android:name=".Basic.Music.MusicService" />
 
-
-        <!--图片下载-->
-        <service android:name=".Projects.Ad.service.DownloadService"/>
-
+        <!-- 图片下载 -->
+        <service android:name=".Projects.WangYI.Ad.service.DownloadService" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -183,8 +181,10 @@
         <activity android:name=".Basic.AsynTask.AsynTaskActivity" />
         <activity android:name=".BasicActivity" />
         <activity android:name=".ProjectDemoActivity" />
-        <activity android:name=".Projects.Ad.SplashActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity
+            android:name=".Projects.WangYI.Ad.SplashActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".Projects.WangYI.Home.View.Activity.WyHomeIndexActivity"></activity>
     </application>
 
 </manifest>

@@ -66,6 +66,7 @@ public class UIActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ui);
         ButterKnife.bind(this);
+
         mBtnTextView = findViewById(R.id.btn_textview);
         mBtnButton = findViewById(R.id.btn_button);
         mBtnEditText = findViewById(R.id.edittext);
