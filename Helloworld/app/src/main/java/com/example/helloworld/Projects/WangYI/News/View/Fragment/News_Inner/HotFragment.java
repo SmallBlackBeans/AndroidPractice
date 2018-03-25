@@ -1,4 +1,4 @@
-package com.example.helloworld.Projects.WangYI.Home.View.Fragment;
+package com.example.helloworld.Projects.WangYI.News.View.Fragment.News_Inner;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,15 +10,14 @@ import android.view.ViewGroup;
 import com.example.helloworld.R;
 
 /**
- * Created by hanchenghai on 2018/3/22.
+ * Created by hanchenghai on 2018/3/25.
  */
 
-public class NewsFragment extends Fragment {
+public class HotFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_news, container, false);//attachToRoot 是否自动添加到父容器
-        return view;
+        return inflater.inflate(R.layout.fragment_news_hot,container,false);
     }
 }

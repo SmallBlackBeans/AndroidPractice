@@ -14,8 +14,7 @@ import butterknife.OnClick;
 
 public class ProjectDemoActivity extends AppCompatActivity {
 
-    @BindView(R.id.btn_OpenAd)
-    Button mBtnOpenAd;
+
     @BindView(R.id.btn_wangyi)
     Button mBtnWangyi;
 
@@ -27,14 +26,12 @@ public class ProjectDemoActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.btn_OpenAd, R.id.btn_wangyi})
+    @OnClick({R.id.btn_wangyi})
     public void onViewClicked(View view) {
         Intent intent = null;
         switch (view.getId()) {
-            case R.id.btn_OpenAd:
-                intent = new Intent(this, SplashActivity.class);
-                break;
             case R.id.btn_wangyi:
+                intent = new Intent(this, SplashActivity.class);
                 break;
         }
         startActivity(intent);

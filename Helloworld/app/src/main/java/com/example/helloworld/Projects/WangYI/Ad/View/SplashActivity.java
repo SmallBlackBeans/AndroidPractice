@@ -22,6 +22,7 @@ import com.example.helloworld.Projects.WangYI.Ad.util.ImageUtil;
 import com.example.helloworld.Projects.WangYI.Ad.util.JsonUtil;
 import com.example.helloworld.Projects.WangYI.Ad.util.Md5Helper;
 import com.example.helloworld.Projects.WangYI.Ad.util.SharePreferenceUtil;
+import com.example.helloworld.Projects.WangYI.News.View.Activity.WyHomeIndexActivity;
 import com.example.helloworld.R;
 
 import java.io.File;
@@ -222,9 +223,9 @@ public class SplashActivity extends AppCompatActivity {
 
 
     private void gotoMain() {
-//        Intent intent = new Intent();
-//        intent.setClass(SplashActivity.this, MainActivity.class);
-//        startActivity(intent);
+        Intent intent = new Intent();
+        intent.setClass(SplashActivity.this, WyHomeIndexActivity.class);
+        startActivity(intent);
         finish();
     }
 
@@ -274,8 +275,8 @@ public class SplashActivity extends AppCompatActivity {
                     if (now < activity.total) {
                         activity.mSkipTime.setProgress(activity.total, now);
                     } else {
-                        //this.removeCallbacks(activity.refreshTime);
-                        //activity.gotoMain();
+                        this.removeCallbacks(activity.refreshTime);
+                        activity.gotoMain();
                     }
                 }
                 break;

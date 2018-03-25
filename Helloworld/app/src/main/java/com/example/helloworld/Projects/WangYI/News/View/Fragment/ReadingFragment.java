@@ -1,4 +1,4 @@
-package com.example.helloworld.Projects.WangYI.Home.View.Fragment;
+package com.example.helloworld.Projects.WangYI.News.View.Fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

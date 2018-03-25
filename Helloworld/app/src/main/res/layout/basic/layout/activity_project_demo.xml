@@ -12,12 +12,6 @@
         android:layout_height="wrap_content"
         android:padding="14dp"
         android:orientation="vertical">
-
-        <Button
-            android:id="@+id/btn_OpenAd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="开机广告"/>
         <Button
             android:id="@+id/btn_wangyi"
             android:layout_marginTop="8dp"

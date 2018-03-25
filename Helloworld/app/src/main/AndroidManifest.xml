@@ -184,7 +184,8 @@
         <activity
             android:name=".Projects.WangYI.Ad.View.SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".Projects.WangYI.Home.View.Activity.WyHomeIndexActivity"></activity>
+        <activity android:name=".Projects.WangYI.News.View.Activity.WyHomeIndexActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 
 </manifest>
