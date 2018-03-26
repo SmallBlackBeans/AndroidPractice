@@ -23,6 +23,8 @@ import com.example.helloworld.Projects.WangYI.Ad.util.JsonUtil;
 import com.example.helloworld.Projects.WangYI.Ad.util.Md5Helper;
 import com.example.helloworld.Projects.WangYI.Ad.util.SharePreferenceUtil;
 import com.example.helloworld.Projects.WangYI.News.View.Activity.WyHomeIndexActivity;
+import com.example.helloworld.Projects.WangYI.Services.WYHttpResponse;
+import com.example.helloworld.Projects.WangYI.Utils.WYHttpUtil;
 import com.example.helloworld.R;
 
 import java.io.File;
@@ -121,7 +123,6 @@ public class SplashActivity extends AppCompatActivity {
             mSkipTime.setVisibility(View.VISIBLE);
             mHandler.post(refreshTime);
 
-
             //读取上次显示的图片的索引
             int index = SharePreferenceUtil.getInt(this, IMAGE_INDEX);
 
@@ -129,7 +130,6 @@ public class SplashActivity extends AppCompatActivity {
             if (mAds == null) {
                 return;
             }
-
             List<AdDetail> adDetails = mAds.getAds();
             if (null != adDetails && adDetails.size() > 0) {
                 AdDetail adDetail = adDetails.get(index);
@@ -159,26 +159,17 @@ public class SplashActivity extends AppCompatActivity {
 
     public void httpRequestAds() {
         Log.d("hanxiaocu", "getAds: 来自网络");
-        final Request request = new Request.Builder()
-                .url(Constant.SPLASH_URL)
-                .build();
-
-        //开启一个异步请求
-        mClient.newCall(request).enqueue(new Callback() {
+        WYHttpUtil util = WYHttpUtil.getInstance();
+        util.getData(Constant.SPLASH_URL, new WYHttpResponse<String>(String.class) {
             @Override
-            public void onFailure(Call call, IOException e) {
-                e.printStackTrace();
+            public void onError(String msg) {
+
             }
-
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                if (!response.isSuccessful()) {//请求失败
-
-                }
-                String data = response.body().string();
-                mAds = JsonUtil.parseJson(data, Ads.class);
+            public void onSuccess(String json) {
+                mAds = JsonUtil.parseJson(json,Ads.class);
                 if (null != mAds) {
-                    SharePreferenceUtil.setString(SplashActivity.this, JSON_CACHE, data);
+                    SharePreferenceUtil.setString(SplashActivity.this, JSON_CACHE, json);
                     SharePreferenceUtil.setInt(SplashActivity.this, JSON_CACHE_TIMEOUT, mAds.getNext_req());
                     SharePreferenceUtil.setLong(SplashActivity.this, JSON_SAVE_TIME, SystemClock.currentThreadTimeMillis());
                     //请求成功
@@ -189,10 +180,11 @@ public class SplashActivity extends AppCompatActivity {
                 } else {
                     //失败
                 }
-
             }
         });
     }
+
+
 
     @OnClick(R.id.img_ad)
     public void onViewClicked() {

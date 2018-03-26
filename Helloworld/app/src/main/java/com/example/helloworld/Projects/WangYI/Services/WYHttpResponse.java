@@ -24,16 +24,23 @@ public abstract class WYHttpResponse<T> {
 
 
     public void parse(String json) {
+
         if (TextUtils.isEmpty(json)) {
             onError("链接网络失败");
-        } else {
+            return;
+        }
+        if (tClass == String.class) {
+            onSuccess((T) json);
+            return;
+        }
+
             T result = JsonUtil.parseJson(json, tClass);
             if (result != null) {
                 onSuccess(result);
             }else  {
                 onError("数据解析失败");
             }
-        }
+
     }
 
 }
