@@ -20,4 +20,11 @@
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowBackground">@color/colorTransparent</item>
     </style>
+
+
+
+    <style name="GrayText">
+        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="android:textSize">12sp</item>
+    </style>
 </resources>

@@ -1,9 +1,16 @@
 package com.example.helloworld.Basic.Application;
 
 import android.app.Application;
+import android.os.Environment;
 
 import com.baidu.mapapi.SDKInitializer;
+import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
+import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.squareup.leakcanary.LeakCanary;
+
+import java.io.File;
 
 /**
  * Created by hanchenghai on 2018/3/14.
@@ -27,5 +34,18 @@ public class DemoApplcaition extends Application {
         }
         LeakCanary.install(this);
         // Normal app init code...
+
+
+        //
+        File sd = Environment.getExternalStorageDirectory();
+        File image_loader_cache = new File(sd, "hanxiaocu");
+        if (!image_loader_cache.exists()) {
+            image_loader_cache.mkdirs();
+        }
+        ImageLoaderConfiguration configuration = new ImageLoaderConfiguration.Builder(this)
+                .diskCache(new UnlimitedDiskCache(image_loader_cache))
+                .diskCacheFileNameGenerator(new Md5FileNameGenerator())
+                .build();
+        ImageLoader.getInstance().init(configuration);
     }
 }

@@ -3,6 +3,7 @@ package com.example.helloworld.Projects.WangYI.Utils;
 import com.example.helloworld.Projects.WangYI.Services.WYHttpResponse;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -21,7 +22,11 @@ public class WYHttpUtil {
     static OkHttpClient sClient;
 
     private WYHttpUtil() {
-        sClient = new OkHttpClient();
+        sClient = new OkHttpClient.Builder()
+                .connectTimeout(10, TimeUnit.SECONDS)
+                .writeTimeout(10, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .build();
     }
 
 
