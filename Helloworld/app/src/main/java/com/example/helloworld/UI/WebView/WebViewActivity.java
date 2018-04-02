@@ -1,12 +1,16 @@
 package com.example.helloworld.UI.WebView;
 
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.webkit.JavascriptInterface;
+import android.webkit.JsResult;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
+import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -19,7 +23,7 @@ public class WebViewActivity extends AppCompatActivity {
     public static final String LINK_URL = "url_action";
 
     private WebView mWebView;
-
+    @SuppressLint("JavascriptInterface")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +33,8 @@ public class WebViewActivity extends AppCompatActivity {
 
 
         //加载本地Url
+        //允许访问本地文件
+        //mWebView.getSettings().setAllowFileAccess(true);
         //mWebView.loadUrl("file:///android_asset/test.html");
 
         //启用JavaScript 加载网络
@@ -48,6 +54,8 @@ public class WebViewActivity extends AppCompatActivity {
             url = "https://www.baidu.com";
         }
         mWebView.loadUrl(url);
+
+        mWebView.addJavascriptInterface(this,"demo");
 
 
     }
@@ -83,6 +91,7 @@ public class WebViewActivity extends AppCompatActivity {
 //            return super.shouldOverrideUrlLoading(view, request);
         }
 
+        //开始加载一个页面的回调
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             super.onPageStarted(view, url, favicon);
@@ -101,6 +110,20 @@ public class WebViewActivity extends AppCompatActivity {
 //                }
 //            });
         }
+
+        //加载错误
+        @Override
+        public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
+            super.onReceivedError(view, request, error);
+            //可以根据错误跳转指定页面
+        }
+
+
+
+        @Override
+        public void onLoadResource(WebView view, String url) {
+            super.onLoadResource(view, url);
+        }
     }
 
 
@@ -115,6 +138,12 @@ public class WebViewActivity extends AppCompatActivity {
         public void onReceivedTitle(WebView view, String title) {
             super.onReceivedTitle(view, title);
             setTitle(title);
+        }
+
+
+        @Override
+        public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
+            return super.onJsAlert(view, url, message, result);
         }
     }
 }
