@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.helloworld.Projects.WangYI.News.View.Fragment.MineFragment;
 import com.example.helloworld.Projects.WangYI.News.View.Fragment.NewsFragment;
@@ -22,6 +23,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class WyHomeIndexActivity extends AppCompatActivity {
+
+
+    long lastBackTime;
 
     @BindView(R.id.tab_host)
     FragmentTabHost mTabHost;
@@ -60,7 +64,7 @@ public class WyHomeIndexActivity extends AppCompatActivity {
         for (int i = 0; i < titles.length; i++) {
             TabHost.TabSpec tmp = mTabHost.newTabSpec("" + i);//标识符
             //tmp.setIndicator("one");//内容
-            tmp.setIndicator(getTabBarItemView(this,titles[i],icons[i]));
+            tmp.setIndicator(getTabBarItemView(this, titles[i], icons[i]));
             mTabHost.addTab(tmp, classes[i], null);
         }
 
@@ -85,4 +89,16 @@ public class WyHomeIndexActivity extends AppCompatActivity {
         return view;
     }
 
+
+    @Override
+    public void onBackPressed() {
+
+        long now = System.currentTimeMillis();
+        if (now - lastBackTime < 1000) {
+            finish();
+        } else {
+            Toast.makeText(this, "再次点击退出网易", Toast.LENGTH_LONG).show();
+        }
+        lastBackTime = now;
+    }
 }
