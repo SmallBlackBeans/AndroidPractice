@@ -1,5 +1,6 @@
 package com.example.helloworld.Projects.WangYI.News.View.Fragment.News_Inner;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -22,6 +24,7 @@ import com.example.helloworld.Projects.WangYI.News.Adapter.WYHotAdapter;
 import com.example.helloworld.Projects.WangYI.News.Bean.Banner;
 import com.example.helloworld.Projects.WangYI.News.Bean.Hot;
 import com.example.helloworld.Projects.WangYI.News.Bean.HotDetail;
+import com.example.helloworld.Projects.WangYI.News.View.Activity.WYNewsDetailctivity;
 import com.example.helloworld.Projects.WangYI.Services.WYHttpResponse;
 import com.example.helloworld.Projects.WangYI.Utils.WYHttpUtil;
 import com.example.helloworld.R;
@@ -116,6 +119,20 @@ public class HotFragment extends Fragment implements ViewPager.OnPageChangeListe
         View bannerView = mInflater.inflate(R.layout.include_banner, null);
         mlistView.addHeaderView(bannerView);
         mlistView.setOnScrollListener(this);
+        mlistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), WYNewsDetailctivity.class);
+                HotDetail detail = (HotDetail) mAdapter.getItem(position - mlistView.getHeaderViewsCount());
+                intent.putExtra(WYNewsDetailctivity.DOCID,detail.getDocid());
+                startActivity(intent);
+
+                getActivity().overridePendingTransition(R.anim.activity_in,R.anim.activity_out);
+            }
+        });
+
+
         mViewPager = bannerView.findViewById(R.id.viewpager);
         mViewPager.addOnPageChangeListener(this);
 
@@ -143,6 +160,7 @@ public class HotFragment extends Fragment implements ViewPager.OnPageChangeListe
                     List<HotDetail> details = hot.getT1348647909107();
                     HotDetail hot_banner = details.get(0);
                     List<Banner> ads = hot_banner.getAds();
+                    mBanners.clear();
                     if (pageNum == 0 && ads != null && ads.size() > 0) {
                         mBanners.addAll(ads);
                         details.remove(0);
@@ -177,6 +195,10 @@ public class HotFragment extends Fragment implements ViewPager.OnPageChangeListe
     }
 
     public void initBanner() {
+        mDots.removeAllViews();
+        dot_imgs.clear();
+        mViews.clear();
+
         if (mBanners != null && mBanners.size() > 0) {
             for (int i = 0; i < mBanners.size(); i++) {
                 View view = mInflater.inflate(R.layout.include_banner_item, null);

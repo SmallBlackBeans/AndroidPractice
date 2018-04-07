@@ -23,7 +23,8 @@ public class WebViewActivity extends AppCompatActivity {
     public static final String LINK_URL = "url_action";
 
     private WebView mWebView;
-    @SuppressLint("JavascriptInterface")
+
+    @JavascriptInterface
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +44,6 @@ public class WebViewActivity extends AppCompatActivity {
         mWebView.setWebChromeClient(new MyChromeWebClient());
 
 
-
         mWebView.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
         mWebView.getSettings().setLoadWithOverviewMode(true);
         mWebView.getSettings().setUseWideViewPort(true);
@@ -55,7 +55,8 @@ public class WebViewActivity extends AppCompatActivity {
         }
         mWebView.loadUrl(url);
 
-        mWebView.addJavascriptInterface(this,"demo");
+        ///暴露给xml 本页面的的名称 window.demo.方法 使得js 可以操作本地的java接口
+        mWebView.addJavascriptInterface(this, "demo");
 
 
     }
@@ -86,10 +87,14 @@ public class WebViewActivity extends AppCompatActivity {
         //重定向不要抛到系统浏览器
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-            view.loadUrl(request.getUrl().toString());
+            if (request.getUrl().toString().startsWith("http")) {
+                view.loadUrl(request.getUrl().toString());
+            } else {
+
+            }
             return true;
-//            return super.shouldOverrideUrlLoading(view, request);
         }
+
 
         //开始加载一个页面的回调
         @Override
@@ -117,7 +122,6 @@ public class WebViewActivity extends AppCompatActivity {
             super.onReceivedError(view, request, error);
             //可以根据错误跳转指定页面
         }
-
 
 
         @Override

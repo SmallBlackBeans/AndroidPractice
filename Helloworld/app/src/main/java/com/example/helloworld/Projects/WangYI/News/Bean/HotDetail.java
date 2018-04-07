@@ -14,6 +14,16 @@ public class HotDetail {
     int replyCount;
     String specialID;
 
+    public String getDocid() {
+        return docid;
+    }
+
+    public void setDocid(String docid) {
+        this.docid = docid;
+    }
+
+    String docid;
+
     public List<Banner> getAds() {
         return ads;
     }
@@ -71,6 +81,7 @@ public class HotDetail {
                 ", source='" + source + '\'' +
                 ", replyCount=" + replyCount +
                 ", specialID='" + specialID + '\'' +
+                ", docid='" + docid + '\'' +
                 '}';
     }
 }

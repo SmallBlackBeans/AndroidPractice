@@ -124,6 +124,8 @@ public class WYHotAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
+
+
     class ViewHolder {
         ImageView icon;
         TextView title;

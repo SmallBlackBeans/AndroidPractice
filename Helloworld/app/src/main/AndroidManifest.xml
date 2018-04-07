@@ -184,8 +184,12 @@
         <activity
             android:name=".Projects.WangYI.Ad.View.SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".Projects.WangYI.News.View.Activity.WyHomeIndexActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity
+            android:name=".Projects.WangYI.News.View.Activity.WyHomeIndexActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".Projects.WangYI.News.View.Activity.WYNewsDetailctivity"
+            android:theme="@style/back_Transparent" />
+        <activity android:name=".Projects.WangYI.News.View.Activity.WebDetailImageActivity"></activity>
     </application>
 
 </manifest>
