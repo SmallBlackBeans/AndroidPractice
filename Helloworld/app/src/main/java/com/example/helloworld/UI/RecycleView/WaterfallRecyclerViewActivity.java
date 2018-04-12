@@ -23,7 +23,7 @@ public class WaterfallRecyclerViewActivity extends AppCompatActivity {
         mRvWaterFall.setAdapter(new WaterFalldapter(WaterfallRecyclerViewActivity.this, new WaterFalldapter.OnItemClickListener() {
             @Override
             public void onClick(int position) {
-
+//ceshi
             }
         }));
     }
