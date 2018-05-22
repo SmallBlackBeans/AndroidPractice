@@ -1,4 +1,4 @@
-package com.example.helloworld.utils;
+package com.example.helloworld.Utils;
 
 import android.content.Context;
 import android.widget.Toast;

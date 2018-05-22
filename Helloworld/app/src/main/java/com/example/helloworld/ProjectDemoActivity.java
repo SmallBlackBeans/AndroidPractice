@@ -17,6 +17,8 @@ public class ProjectDemoActivity extends AppCompatActivity {
 
     @BindView(R.id.btn_wangyi)
     Button mBtnWangyi;
+    @BindView(R.id.btn_appManager)
+    Button mBtnAppManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +28,14 @@ public class ProjectDemoActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.btn_wangyi})
+    @OnClick({R.id.btn_wangyi, R.id.btn_appManager})
     public void onViewClicked(View view) {
         Intent intent = null;
         switch (view.getId()) {
             case R.id.btn_wangyi:
+                intent = new Intent(this, SplashActivity.class);
+                break;
+            case R.id.btn_appManager:
                 intent = new Intent(this, SplashActivity.class);
                 break;
         }

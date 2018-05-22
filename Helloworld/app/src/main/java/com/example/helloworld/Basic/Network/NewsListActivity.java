@@ -5,8 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
 import com.example.helloworld.R;
-import com.example.helloworld.utils.NetworkUtil;
-import com.example.helloworld.utils.XmlUtil;
+import com.example.helloworld.Utils.NetworkUtil;
+import com.example.helloworld.Utils.XmlUtil;
 
 import java.io.InputStream;
 import java.util.ArrayList;

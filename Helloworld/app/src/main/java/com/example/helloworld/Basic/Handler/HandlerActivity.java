@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.helloworld.R;
-import com.example.helloworld.utils.ToastUtil;
+import com.example.helloworld.Utils.ToastUtil;
 
 
 /**

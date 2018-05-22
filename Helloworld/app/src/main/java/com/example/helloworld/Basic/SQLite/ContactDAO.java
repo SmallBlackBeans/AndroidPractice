@@ -23,7 +23,6 @@ public class ContactDAO {
         SQLiteDatabase db = mHelper.getWritableDatabase();
 
         db.execSQL("insert into contactinfo(" + DbOpenHelper._USERNAME + "," + DbOpenHelper._PHONE + ") values(?,?)", new String[]{username, phone});
-
     }
 
 

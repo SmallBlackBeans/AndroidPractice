@@ -1,16 +1,21 @@
 package com.example.helloworld.Basic.Service;
 
 import android.app.Service;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.media.MediaRecorder;
+import android.net.Uri;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
+import com.android.internal.telephony.ITelephony;
+
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -85,8 +90,6 @@ public class CallService extends Service {
     }
 
 
-
-
     /**
      * 获取录音保存路径
      *
@@ -101,9 +104,54 @@ public class CallService extends Service {
         return file.getAbsolutePath();
     }
 
+
+
+    private void deleteCallLog(String phoneNum) {
+        //获取内容解析器
+        ContentResolver resolver = getContentResolver();
+        Uri uri = Uri.parse("content://call_log/calls");
+        resolver.delete(uri,"number=?",new String[]{phoneNum});
+    }
+
+
+
+
+
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
         return null;
+    }
+
+
+    class CallListener extends PhoneStateListener {
+
+        @Override
+        public void onCallStateChanged(int state, String incomingNumber) {
+            switch (state) {
+                case TelephonyManager.CALL_STATE_IDLE://空闲
+                    break;
+                case TelephonyManager.CALL_STATE_OFFHOOK://接通
+                    endCall();
+                    break;
+                case TelephonyManager.CALL_STATE_RINGING://响铃
+                    break;
+            }
+            super.onCallStateChanged(state, incomingNumber);
+        }
+    }
+
+    private void endCall() {
+        try {
+            /*反射拦截电话*/
+            Class<?> clazz = CallService.class.getClassLoader().loadClass("android.os.ServiceManager");
+            Method method = clazz.getDeclaredMethod("getService", String.class);
+            IBinder binder = (IBinder) method.invoke(null, TELEPHONY_SERVICE);
+            ITelephony iTelephony = ITelephony.Stub.asInterface(binder);
+            iTelephony.endCall();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 }

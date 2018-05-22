@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.helloworld.R;
-import com.example.helloworld.utils.ToastUtil;
+import com.example.helloworld.Utils.ToastUtil;
 
 public class ToastActivity extends AppCompatActivity {
 

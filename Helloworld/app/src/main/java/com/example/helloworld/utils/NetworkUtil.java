@@ -1,10 +1,8 @@
-package com.example.helloworld.utils;
+package com.example.helloworld.Utils;
 
 import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 
 /**
  * Created by hanchenghai on 2018/3/5.

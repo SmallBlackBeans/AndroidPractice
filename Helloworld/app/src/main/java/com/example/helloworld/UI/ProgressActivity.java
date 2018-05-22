@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 
 import com.example.helloworld.R;
-import com.example.helloworld.utils.ToastUtil;
+import com.example.helloworld.Utils.ToastUtil;
 
 public class ProgressActivity extends AppCompatActivity {
 

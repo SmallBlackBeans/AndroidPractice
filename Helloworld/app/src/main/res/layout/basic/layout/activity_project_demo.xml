@@ -19,6 +19,13 @@
             android:layout_height="wrap_content"
             android:text="网易新闻"/>
 
+        <Button
+            android:id="@+id/btn_appManager"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="软件管理"/>
+
     </LinearLayout>
 
 </ScrollView>
