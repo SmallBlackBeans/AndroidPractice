@@ -13,6 +13,8 @@ public class PopupWindowActivity extends AppCompatActivity {
 
 
     private Button mBtnPop;
+    private PopupWindow mPop;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,12 +24,22 @@ public class PopupWindowActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 View contentView = getLayoutInflater().inflate(R.layout.layout_pop,null);
-                PopupWindow pop = new PopupWindow(contentView,view.getWidth(), ViewGroup.LayoutParams.WRAP_CONTENT);
-                pop.setOutsideTouchable(true);
-                pop.setFocusable(true);//避免重复弹出
-                pop.setAnimationStyle(1);
-                pop.showAsDropDown(mBtnPop);
+                mPop = new PopupWindow(contentView,view.getWidth(), ViewGroup.LayoutParams.WRAP_CONTENT);
+                mPop.setOutsideTouchable(true);
+                mPop.setFocusable(true);//避免重复弹出
+                mPop.setAnimationStyle(1);
+                mPop.showAsDropDown(mBtnPop);
             }
         });
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        if (mPop != null) {
+            mPop.dismiss();
+            mPop = null;
+        }
+        super.onDestroy();
     }
 }
