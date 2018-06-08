@@ -16,7 +16,7 @@ import static junit.framework.Assert.assertEquals;
 
 public class SmsBackUpTest extends AndroidTestCase {
     public void testSmsBackUp() {
-        boolean result = SmsUtil.smsBackUp(getContext(), filename);
+        boolean result = SmsUtil.smsBackUp(getContext(), "filename");
         assertEquals(true,result);
     }
 }

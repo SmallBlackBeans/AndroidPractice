@@ -1,4 +1,6 @@
-package com.example.helloworld.utils;
+package com.example.helloworld.Utils;
+
+
 
 import android.text.*;
 import android.text.style.CharacterStyle;
@@ -37,7 +39,7 @@ public class StringUtils {
 
 	/**
 	 * 返回一个高亮spannable
-	 * 
+	 *
 	 * @param content
 	 *            文本内容
 	 * @param color
@@ -63,7 +65,7 @@ public class StringUtils {
 
 	/**
 	 * 获取链接样式的字符串，即字符串下面有下划线
-	 * 
+	 *
 	 * @param resId
 	 *            文字资源
 	 * @return 返回链接样式的字符串

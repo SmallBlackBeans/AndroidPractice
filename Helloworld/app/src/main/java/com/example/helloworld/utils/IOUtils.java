@@ -1,7 +1,7 @@
-package com.example.helloworld.utils;
-
+package com.example.helloworld.Utils;
 import java.io.Closeable;
 import java.io.IOException;
+
 
 public class IOUtils {
 	/** 关闭流 */
@@ -10,8 +10,9 @@ public class IOUtils {
 			try {
 				io.close();
 			} catch (IOException e) {
-				LogUtils.e(e);
+//				LogUtils.e(e);
 			}
+
 		}
 		return true;
 	}
